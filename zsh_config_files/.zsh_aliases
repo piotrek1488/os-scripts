@@ -1,9 +1,0 @@
-alias ls='ls -G'
-alias ll='ls -alhG'
-alias la='ls -A'
-alias venv="source ~/venv/bin/activate"
-
-# =========================
-# ALERT (macOS FIXED)
-# =========================
-alias alert='osascript -e "display notification \"Done\" with title \"Terminal\""'

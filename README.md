@@ -1,1 +1,1 @@
-# macos-scripts
+# linux-scripts
