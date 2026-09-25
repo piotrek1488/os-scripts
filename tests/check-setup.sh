@@ -11,7 +11,7 @@ cp "$ROOT/setup.sh" "$fixture/"
 cp "$ROOT/scripts/lib/settings.sh" "$fixture/scripts/lib/"
 export OS_SCRIPTS_SETUP_LOG="$work/calls"
 : > "$OS_SCRIPTS_SETUP_LOG"
-for file in install.sh scripts/{setup-repositories,install-adguard,setup-ulauncher,setup-polish,restore-desktop,restore-settings,restore-system-settings,setup-python}.sh; do
+for file in install.sh scripts/{setup-repositories,install-adguard,setup-ulauncher,setup-polish,restore-desktop,restore-settings,restore-bash,restore-system-settings,setup-python}.sh; do
     cat > "$fixture/$file" <<'MOCK'
 #!/usr/bin/env bash
 set -euo pipefail
@@ -58,6 +58,7 @@ setup-ulauncher.sh --apply
 setup-polish.sh --apply
 restore-desktop.sh --apply
 restore-settings.sh --section apps --skip-ulauncher --apply
+restore-bash.sh --apply
 restore-system-settings.sh --apply
 setup-python.sh --apply
 EXPECTED
@@ -76,12 +77,13 @@ ulauncher setup-ulauncher.sh
 language setup-polish.sh
 desktop restore-desktop.sh
 settings restore-settings.sh
+settings restore-bash.sh
 services restore-system-settings.sh
 python setup-python.sh
 STAGES
     : > "$OS_SCRIPTS_SETUP_LOG"
     run_setup --apply --from settings > /dev/null
-    tail -3 "$work/expected" > "$work/resumed"
+    tail -4 "$work/expected" > "$work/resumed"
     cmp "$work/resumed" "$OS_SCRIPTS_SETUP_LOG" || fail 'Wznowienie powtórzyło wcześniejsze etapy'
     : > "$OS_SCRIPTS_SETUP_LOG"
     if PATH="$work/bin:$PATH" DBUS_SESSION_BUS_ADDRESS='' bash "$fixture/setup.sh" --apply >/dev/null 2>&1; then fail 'Brak sesji GNOME zaakceptowany'; fi

@@ -10,6 +10,7 @@ Polecenie odtwarzania: `bash scripts/restore-desktop.sh --apply`. Domyślnie skr
 - Strefa: Europe/Warsaw, NTP aktywne, profil zasilania balanced. Nie da się określić jednego domyślnego języka, strefy ani profilu ekranu: zależą od instalacji i sprzętu.
 - Bezczynność: brak wygaszania (`idle-delay=0`), przygaszanie wyłączone; zasilanie sieciowe nie usypia systemu. Night Light: ręczny harmonogram, 4700 K.
 - Przeglądarka domyślna: Microsoft Edge. Powiązania MIME są scalane przez `xdg-mime`; brakująca aplikacja jest pomijana.
+- Dodatkowe skojarzenia wybrane dla instalatora: Sublime Text (`sublime-text_subl.desktop`) dla `text/plain`, `application/json`, `application/xml`, `text/x-python` i `text/x-shellscript`. Ustawia je etap `desktop` pełnego instalatora, po instalacji aplikacji.
 
 ### Monitory (obecna sesja)
 

@@ -1,0 +1,50 @@
+# shellcheck shell=bash
+# Preferencje użytkownika; ładowane w interaktywnej sesji Bash.
+case $- in *i*) ;; *) return 0 ;; esac
+
+case " ${LESS:-} " in *' -R '*) ;; *) export LESS="${LESS:+$LESS }-R" ;; esac
+export LANG=en_US.UTF-8
+unset EDITOR WINEDITOR CSHEDIT
+export TMOUT=0
+
+# Opcjonalne środowisko firmowe: nie jest wymagane na nowej instalacji.
+if [[ -d /app/wmrci/cie ]]; then
+    export CIE_HOME=/app/wmrci/cie
+    export CIE_LABEL=CIE-LATEST
+fi
+if [[ -d /proj/emca-studio/bin && :$PATH: != *:/proj/emca-studio/bin:* ]]; then
+    export PATH="$PATH:/proj/emca-studio/bin"
+fi
+
+# Najpierw własne pliki pomocnicze Git, następnie odpowiedniki z pakietu systemowego.
+if [[ -r $HOME/.git-completion.bash ]]; then
+    source "$HOME/.git-completion.bash"
+elif [[ -r /usr/share/bash-completion/completions/git ]]; then
+    source /usr/share/bash-completion/completions/git
+fi
+if [[ -r $HOME/.git-prompt.sh ]]; then
+    source "$HOME/.git-prompt.sh"
+elif [[ -r /usr/lib/git-core/git-sh-prompt ]]; then
+    source /usr/lib/git-core/git-sh-prompt
+fi
+if ! declare -F __git_ps1 >/dev/null; then __git_ps1() { :; }; fi
+
+if [[ -r $HOME/.bash_aliases ]]; then source "$HOME/.bash_aliases"; fi
+if [[ -r $HOME/.bash_functions ]]; then source "$HOME/.bash_functions"; fi
+
+MY_SITE=NA
+if hostname -d 2>/dev/null | command grep -q seli; then MY_SITE=SELI; fi
+PS1='\[\033[01;31m\][BASH] \[\033[01;36m\]\u\[\033[00m\]@\[\033[01;32m\]\h \[\033[01;30m\][\A] \[\033[1;34m\][${PWD#${PWD%/*/*/*}/}] \[\033[1;31m\]->\[\033[00m\]$(__git_ps1)\[\033[00m\] '
+PROMPT_DIRTRIM=3
+
+if [[ $(hostname) == seliiuvd04991 ]]; then
+    if [[ -r $HOME/.bash_lte_on_cots ]]; then source "$HOME/.bash_lte_on_cots"; fi
+    if [[ -r $HOME/.bash_lte_on_cots_aliases ]]; then source "$HOME/.bash_lte_on_cots_aliases"; fi
+fi
+
+if command -v git >/dev/null; then
+    EMAIL=$(git config --global user.email) || EMAIL=
+    USER_NAME=$(git config --global user.name) || USER_NAME=
+fi
+# Istniejący .bashrc może już wczytywać ten plik; dopisany loader nie zrobi tego drugi raz.
+OS_SCRIPTS_BASH_LOADED=1

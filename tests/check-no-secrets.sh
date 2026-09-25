@@ -8,6 +8,8 @@ need rg
 need jq
 need tar
 pattern='(^|[^A-Za-z0-9])(sk-(proj-|svcacct-)?[A-Za-z0-9_-]{24,}|AIza[0-9A-Za-z_-]{30,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|xox[baprs]-[A-Za-z0-9-]{16,}|AKIA[A-Z0-9]{16})|-----BEGIN ((RSA|EC|DSA|OPENSSH|PGP) )?PRIVATE KEY( BLOCK)?-----|https?://[^[:space:]/<>:@]+:[^[:space:]/<>@]{3,}@'
+# Poświadczenia CLI również w komentarzach (np. stare aliasy).
+pattern+='|curl.*[[:space:]](--user|-u)[[:space:]]+[A-Za-z0-9_.@-]+:[A-Za-z0-9+/_=-]{6,}|mysql.*[[:space:]](-p|--password=)[A-Za-z0-9+/_=-]{6,}'
 scan_stream() {
     local status=0
     # Bez -q: odbierz cały strumień archiwum, bez SIGPIPE i bez ujawniania treści.

@@ -69,7 +69,9 @@ for ((i=start; i<${#stages[@]}; i++)); do
         language) run bash "$ROOT/scripts/setup-polish.sh" --apply ;;
         # Pulpit po tłumaczeniach przywraca zapisany podział: system EN, konto PL.
         desktop) run bash "$ROOT/scripts/restore-desktop.sh" --apply ;;
-        settings) run bash "$ROOT/scripts/restore-settings.sh" --section apps --skip-ulauncher --apply ;;
+        settings)
+            run bash "$ROOT/scripts/restore-settings.sh" --section apps --skip-ulauncher --apply
+            run bash "$ROOT/scripts/restore-bash.sh" --apply ;;
         services) run bash "$ROOT/scripts/restore-system-settings.sh" --apply ;;
         python) run bash "$ROOT/scripts/setup-python.sh" --apply ;;
     esac

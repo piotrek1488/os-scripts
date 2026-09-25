@@ -17,6 +17,7 @@ secrets/
 *.secrets.json
 *.private.json
 *.key
+*.keytab
 *.p12
 *.pfx
 id_rsa

@@ -22,7 +22,8 @@ Kolejność:
 2. `ulauncher`: zależności, 12 rozszerzeń, oba motywy i konfiguracja.
 3. `language`: polskie tłumaczenia i pakiety językowe.
 4. `desktop`: ustawienia ogólne, Dostrajanie, rozszerzenia GNOME i zasoby pulpitu.
-5. `settings`: preferencje aplikacji, bez ponownej instalacji dodatków Ulaunchera.
+5. `settings`: preferencje aplikacji oraz Bash (prompt, aliasy i funkcje),
+   bez ponownej instalacji dodatków Ulaunchera.
 6. `services`: preferencje Docker i Timeshift, bez restartowania usług.
 7. `python`: utworzenie `~/.venv` i instalacja bibliotek z listy wymagań.
 
@@ -212,6 +213,24 @@ Pobiera brakujący kod ze sprawdzonych commitów z kontrolą SHA256 i instaluje 
 APT dla systemowego Pythona. Istniejące klucze API zachowuje w lokalnych bazach;
 repozytorium ich nie zawiera. Na świeżej instalacji tokeny i urządzenia Bluetooth
 wymagają uzupełnienia. Szczegóły i wyniki sprawdzenia są w raporcie.
+
+## Bash: prompt, aliasy i funkcje
+
+W [config/bash](config/bash/README.md) są `.bashrc.user`, 46 aktywnych aliasów
+w `.bash_aliases` i 13 funkcji w `.bash_functions`. Usunięto stare zakomentowane
+polecenia, w tym zawierające poświadczenia. Ustawienia ładuje etap `settings`
+pełnego instalatora. Osobno, bez wymagania sesji GNOME:
+
+```bash
+bash scripts/restore-bash.sh --dry-run
+bash scripts/restore-bash.sh --apply
+```
+
+Skrypt zachowuje obecną zawartość `.bashrc`, dodając jeden blok wczytujący
+`.bashrc.user`. Pozostałe trzy pliki zastępuje wersjami z repozytorium, tworząc
+kopie istniejących plików w `~/.local/state/os-scripts/backups/bash-*`.
+Nie wykonuje przenoszonych definicji. Po odtworzeniu otwórz nowy terminal Bash.
+Funkcje firmowe wymagają właściwych narzędzi i ścieżek; nie są uruchamiane automatycznie.
 
 ## Środowisko Pythona
 

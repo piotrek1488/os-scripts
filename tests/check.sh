@@ -193,3 +193,5 @@ bash "$ROOT/tests/check-ulauncher.sh"
 bash "$ROOT/tests/check-no-secrets.sh"
 
 bash "$ROOT/tests/check-setup.sh"
+
+bash "$ROOT/tests/check-bash.sh"

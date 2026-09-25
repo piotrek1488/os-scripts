@@ -1580,6 +1580,26 @@
     {
       "type": "x-scheme-handler/codex",
       "desktop": "chatgpt.desktop"
+    },
+    {
+      "type": "text/plain",
+      "desktop": "sublime-text_subl.desktop"
+    },
+    {
+      "type": "application/json",
+      "desktop": "sublime-text_subl.desktop"
+    },
+    {
+      "type": "application/xml",
+      "desktop": "sublime-text_subl.desktop"
+    },
+    {
+      "type": "text/x-python",
+      "desktop": "sublime-text_subl.desktop"
+    },
+    {
+      "type": "text/x-shellscript",
+      "desktop": "sublime-text_subl.desktop"
     }
   ],
   "timezone": "Europe/Warsaw",

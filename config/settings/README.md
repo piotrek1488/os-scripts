@@ -66,6 +66,13 @@ konto i formaty `pl_PL.UTF-8`, systemowe `LANG=en_US.UTF-8`, klawiatura sesji `p
 a systemowy układ X11 `us`/`pc105`. Narzędziowe `LC_ALL=C.UTF-8` nie jest preferencją
 pulpitu. Skrypt nie wymusza języka wszystkich aplikacji; np. Ferdium ma `en-US`.
 
+## Bash
+
+Pełny instalator w etapie `settings` wywołuje również `scripts/restore-bash.sh`.
+Przywraca `.bashrc.user`, aliasy i funkcje oraz dopisuje blok ładowania do `.bashrc`.
+Osobne uruchomienie: `bash scripts/restore-bash.sh --dry-run` lub `--apply`.
+Nie wymaga jq ani GNOME. Szczegóły i ograniczenia: [config/bash](../bash/README.md).
+
 ## Preferencje aplikacji
 
 ```bash
