@@ -1,0 +1,20 @@
+--- a/main.py
++++ b/main.py
+@@ -21,7 +21,16 @@
+     # Find the keyword id using the keyword (since the keyword can be changed by users)
+     for setting, kw in extension.preferences.items():
+       if kw == keyword:
+-        subprocess.Popen(['gnome-control-center', setting])
++        # os-scripts: GNOME 50 groups these panels under System/Applications.
++        panels = {
++          'datetime': ['system', 'datetime'],
++          'info-overview': ['system', 'about'],
++          'region': ['system', 'region'],
++          'user-accounts': ['system', 'users'],
++          'default-apps': ['applications'],
++          'removable-media': ['applications'],
++        }
++        subprocess.Popen(['gnome-control-center'] + panels.get(setting, [setting]))
+         return HideWindowAction()
+ 
+ if not shutil.which('gnome-control-center'):

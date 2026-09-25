@@ -1,0 +1,7 @@
+# Zweryfikowano 2026-09-24: Ubuntu 26.04 (resolute), amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Zewnętrzne repozytoria i klucze: repositories.sources (konfiguracja opisana w README).
+gamemode
+vlc
+qbittorrent
+ffmpeg

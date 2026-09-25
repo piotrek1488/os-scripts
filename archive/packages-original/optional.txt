@@ -1,0 +1,19 @@
+#!/bin/bash
+
+apt_list = (
+    gamemode
+    nuvio
+    vlc
+    qbittorrent
+    heroic
+    ffmpeg-full
+)
+
+dpkg_list = (
+    jdownloader
+)
+
+snap_list = (
+    audacity
+    opencomic
+)

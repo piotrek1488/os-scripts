@@ -1,0 +1,5 @@
+# Linki DEB, po jednym w wierszu. Sprawdzono 2026-09-25, Ubuntu 26.04 / amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Źródła: SOURCES.md. Pobieranie i instalacja: bash install.sh --source deb.
+https://github.com/NuvioMedia/NuvioDesktop/releases/download/0.1.25-alpha/Nuvio-Linux-x86_64-0.1.25-alpha.deb
+https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.22.3/Heroic-2.22.3-linux-amd64.deb

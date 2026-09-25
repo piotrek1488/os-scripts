@@ -1,0 +1,5 @@
+# Linki DEB, po jednym w wierszu. Sprawdzono 2026-09-25, Ubuntu 26.04 / amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Źródła: SOURCES.md. Pobieranie i instalacja: bash install.sh --source deb.
+https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
+https://prod.download.desktop.kiro.dev/releases/stable/linux-x64/signed/1.1.70/deb/kiro-ide-1.1.70-stable-linux-x64.deb

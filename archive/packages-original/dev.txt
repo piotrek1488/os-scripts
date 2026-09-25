@@ -1,0 +1,37 @@
+#!/bin/bash
+
+apt_list = (
+    ansible
+    cmake
+    curl
+    gcc
+    gh
+    git
+    git-email
+    imagemagick
+    kdiff3
+    kiro
+    make
+    moreutils
+    nedit
+    notepadqq
+    powershell
+    python3
+    python3-venv
+    xmlstarlet
+    docker
+    docker-compose
+    pyenv
+)
+
+dpkg_list = (
+    docker-desktop
+)
+
+snap_list = (
+    drawio
+    glab
+    openjdk
+    sublime-text
+    yq
+)

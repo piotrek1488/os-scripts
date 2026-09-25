@@ -1,0 +1,23 @@
+# Zweryfikowano 2026-09-24: Ubuntu 26.04 (resolute), amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Zewnętrzne repozytoria i klucze: repositories.sources (konfiguracja opisana w README).
+ansible
+cmake
+gcc
+git-email
+imagemagick
+kdiff3
+make
+moreutils
+notepadqq
+python3
+python3-venv
+xmlstarlet
+docker-ce
+docker-compose-plugin
+pyenv
+sqlitebrowser
+sqlite3
+docker-ce-cli
+containerd.io
+docker-buildx-plugin

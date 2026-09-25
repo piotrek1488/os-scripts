@@ -1,0 +1,664 @@
+{
+  "captured": "2026-09-24",
+  "target": "Ubuntu 26.04 / GNOME 50.1",
+  "dconf": [
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/date-format",
+      "value": "'regular'"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/location-mode",
+      "value": "'path-bar'"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/show-hidden",
+      "value": "true"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/sidebar-width",
+      "value": "140"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/sort-column",
+      "value": "'name'"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/sort-directories-first",
+      "value": "true"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/sort-order",
+      "value": "'ascending'"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/type-format",
+      "value": "'category'"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/view-type",
+      "value": "'list'"
+    },
+    {
+      "path": "/org/gtk/gtk4/settings/file-chooser/window-size",
+      "value": "(797, 326)"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/date-format",
+      "value": "'regular'"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/location-mode",
+      "value": "'path-bar'"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/show-hidden",
+      "value": "true"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/show-size-column",
+      "value": "true"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/show-type-column",
+      "value": "true"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/sidebar-width",
+      "value": "180"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/sort-column",
+      "value": "'name'"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/sort-directories-first",
+      "value": "true"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/sort-order",
+      "value": "'ascending'"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/type-format",
+      "value": "'category'"
+    },
+    {
+      "path": "/org/gtk/settings/file-chooser/window-size",
+      "value": "(1203, 902)"
+    },
+    {
+      "path": "/org/mate/pluma/active-plugins",
+      "value": "['docinfo', 'modelines', 'filebrowser', 'spell', 'time']"
+    },
+    {
+      "path": "/org/mate/pluma/auto-indent",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/auto-save",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/auto-save-interval",
+      "value": "uint32 10"
+    },
+    {
+      "path": "/org/mate/pluma/bracket-matching",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/color-scheme",
+      "value": "'tango'"
+    },
+    {
+      "path": "/org/mate/pluma/display-line-numbers",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/display-right-margin",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/editor-font",
+      "value": "'Monospace 12'"
+    },
+    {
+      "path": "/org/mate/pluma/highlight-current-line",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/insert-spaces",
+      "value": "false"
+    },
+    {
+      "path": "/org/mate/pluma/right-margin-position",
+      "value": "uint32 80"
+    },
+    {
+      "path": "/org/mate/pluma/tabs-size",
+      "value": "uint32 4"
+    },
+    {
+      "path": "/org/mate/pluma/use-default-font",
+      "value": "true"
+    },
+    {
+      "path": "/org/mate/pluma/wrap-mode",
+      "value": "'GTK_WRAP_WORD'"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/show-expiry",
+      "value": "false"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/show-trust",
+      "value": "false"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/show-type",
+      "value": "false"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/show-validity",
+      "value": "false"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/sidebar-visible",
+      "value": "true"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/sidebar-width",
+      "value": "148"
+    },
+    {
+      "path": "/org/gnome/seahorse/manager/sort-by",
+      "value": "'name'"
+    }
+  ],
+  "files": [
+    {
+      "app": "code",
+      "kind": "json",
+      "target": ".config/Code/User/settings.json",
+      "data": {
+        "explorer.confirmDragAndDrop": false,
+        "chatgpt.localeOverride": "pl-PL",
+        "explorer.confirmDelete": false
+      },
+      "processes": [
+        "code"
+      ],
+      "existing": false
+    },
+    {
+      "app": "micro",
+      "kind": "json",
+      "target": ".config/micro/bindings.json",
+      "data": {
+        "Alt-/": "lua:comment.comment",
+        "CtrlUnderscore": "lua:comment.comment"
+      },
+      "processes": [
+        "micro"
+      ],
+      "existing": false
+    },
+    {
+      "app": "sublime-text",
+      "kind": "json",
+      "target": ".config/sublime-text/Packages/User/Preferences.sublime-settings",
+      "data": {
+        "font_size": 13
+      },
+      "processes": [
+        "sublime_text"
+      ],
+      "existing": false
+    },
+    {
+      "app": "ulauncher",
+      "kind": "json",
+      "target": ".config/ulauncher/settings.json",
+      "data": {
+        "blacklisted-desktop-dirs": "/usr/share/locale:/usr/share/app-install:/usr/share/kservices5:/usr/share/fk5:/usr/share/kservicetypes5:/usr/share/applications/screensavers:/usr/share/kde4:/usr/share/mimelnk",
+        "clear-previous-query": true,
+        "disable-desktop-filters": false,
+        "grab-mouse-pointer": false,
+        "hotkey-show-app": "<Primary>space",
+        "render-on-screen": "mouse-pointer-monitor",
+        "show-indicator-icon": true,
+        "show-recent-apps": "0",
+        "terminal-command": "",
+        "theme-name": "libadwaita-dark"
+      },
+      "processes": [
+        "ulauncher"
+      ],
+      "existing": false
+    },
+    {
+      "app": "ulauncher",
+      "kind": "json",
+      "target": ".config/ulauncher/shortcuts.json",
+      "data": {
+        "7cd30631-60f4-458e-8c68-898d4d169c66": {
+          "id": "7cd30631-60f4-458e-8c68-898d4d169c66",
+          "name": "Google Search",
+          "keyword": "g",
+          "cmd": "https://google.com/search?q=%s",
+          "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+          "is_default_search": true,
+          "run_without_argument": false
+        },
+        "7cd98942-8522-44b9-afaa-5185c3eebff0": {
+          "id": "7cd98942-8522-44b9-afaa-5185c3eebff0",
+          "name": "Stack Overflow",
+          "keyword": "so",
+          "cmd": "https://stackoverflow.com/search?q=%s",
+          "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+          "is_default_search": true,
+          "run_without_argument": false
+        },
+        "f7eb742f-67d8-48a7-8956-87f441ab1065": {
+          "id": "f7eb742f-67d8-48a7-8956-87f441ab1065",
+          "name": "Wikipedia",
+          "keyword": "wiki",
+          "cmd": "https://en.wikipedia.org/wiki/%s",
+          "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+          "is_default_search": true,
+          "run_without_argument": false
+        }
+      },
+      "processes": [
+        "ulauncher"
+      ],
+      "existing": false
+    },
+    {
+      "app": "gtk",
+      "kind": "ini",
+      "target": ".config/gtk-3.0/settings.ini",
+      "data": {
+        "Settings": {
+          "gtk-application-prefer-dark-theme": "0"
+        }
+      },
+      "processes": [],
+      "existing": false
+    },
+    {
+      "app": "gtk",
+      "kind": "ini",
+      "target": ".config/gtk-4.0/settings.ini",
+      "data": {
+        "Settings": {
+          "gtk-application-prefer-dark-theme": "0"
+        }
+      },
+      "processes": [],
+      "existing": false
+    },
+    {
+      "app": "teams-for-linux",
+      "kind": "json",
+      "target": ".config/teams-for-linux/Preferences",
+      "data": {
+        "spellcheck": {
+          "dictionaries": [
+            "pl"
+          ],
+          "dictionary": ""
+        }
+      },
+      "processes": [
+        "teams-for-linux"
+      ],
+      "existing": false
+    },
+    {
+      "app": "ferdium",
+      "kind": "json",
+      "target": "snap/ferdium/current/.config/Ferdium/config/settings.json",
+      "data": {
+        "autoLaunchOnStart": false,
+        "autoLaunchInBackground": false,
+        "runInBackground": true,
+        "reloadAfterResume": true,
+        "reloadAfterResumeTime": 10,
+        "enableSystemTray": true,
+        "startMinimized": true,
+        "confirmOnQuit": false,
+        "minimizeToSystemTray": false,
+        "closeToSystemTray": false,
+        "privateNotifications": false,
+        "clipboardNotifications": true,
+        "notifyTaskBarOnMessage": false,
+        "showDisabledServices": true,
+        "isTwoFactorAutoCatcherEnabled": false,
+        "showServiceName": false,
+        "showMessageBadgeWhenMuted": true,
+        "showDragArea": false,
+        "enableSpellchecking": true,
+        "enableTranslator": false,
+        "spellcheckerLanguage": "automatic",
+        "darkMode": false,
+        "navigationBarManualActive": false,
+        "webviewPaddingSize": 6,
+        "serviceWebviewBorderRadius": 6,
+        "splitMode": false,
+        "splitColumns": 3,
+        "fallbackLocale": "en-US",
+        "beta": false,
+        "isAppMuted": false,
+        "enableGPUAcceleration": true,
+        "enableGlobalHideShortcut": false,
+        "autohideMenuBar": false,
+        "scheduledDNDEnabled": false,
+        "scheduledDNDStart": "17:00",
+        "scheduledDNDEnd": "09:00",
+        "hibernateOnStartup": true,
+        "hibernationStrategy": 300,
+        "wakeUpStrategy": 300,
+        "wakeUpHibernationStrategy": 0,
+        "wakeUpHibernationSplay": true,
+        "automaticUpdates": true,
+        "universalDarkMode": true,
+        "adaptableDarkMode": true,
+        "accentColor": "#7367F0",
+        "progressbarAccentColor": "#7367F0",
+        "serviceRibbonWidth": 68,
+        "sidebarServicesLocation": 1,
+        "iconSize": 30,
+        "sentry": false,
+        "navigationBarBehaviour": "custom",
+        "webRTCIPHandlingPolicy": "disable_non_proxied_udp",
+        "translatorLanguage": "en",
+        "translatorEngine": "LibreTranslate",
+        "useHorizontalStyle": false,
+        "hideCollapseButton": false,
+        "isMenuCollapsed": true,
+        "hideRecipesButton": false,
+        "hideSplitModeButton": true,
+        "useGrayscaleServices": false,
+        "grayscaleServicesDim": 50,
+        "hideWorkspacesButton": false,
+        "hideNotificationsButton": false,
+        "hideSettingsButton": false,
+        "hideDownloadButton": false,
+        "alwaysShowWorkspaces": false,
+        "useCompactWorkspaceDrawer": true,
+        "hideAllServicesWorkspace": false,
+        "liftSingleInstanceLock": false,
+        "enableLongPressServiceHint": false,
+        "isTodosFeatureEnabled": true,
+        "locale": "en-US",
+        "keepAllWorkspacesLoaded": false,
+        "useSelfSignedCertificates": false,
+        "sandboxServices": true
+      },
+      "processes": [
+        "ferdium"
+      ],
+      "existing": true
+    },
+    {
+      "app": "ferdium",
+      "kind": "json",
+      "target": "snap/ferdium/current/.config/Ferdium/config/shortcuts.json",
+      "data": {
+        "activateNextService": "Ctrl+tab",
+        "activatePreviousService": "Ctrl+Shift+tab",
+        "activateServiceUsesAlt": false
+      },
+      "processes": [
+        "ferdium"
+      ],
+      "existing": true
+    },
+    {
+      "app": "microsoft-edge-stable",
+      "kind": "json",
+      "target": ".config/microsoft-edge/Default/Preferences",
+      "data": {
+        "intl": {
+          "accept_languages": "pl,en-US,en,pl-PL",
+          "selected_languages": "pl,en-US,en,pl-PL"
+        },
+        "spellcheck": {
+          "dictionaries": [
+            "en-US",
+            "pl"
+          ]
+        },
+        "browser": {
+          "show_home_button": true,
+          "theme": {
+            "color_scheme2": 2
+          }
+        },
+        "bookmark_bar": {
+          "show_on_all_tabs": true
+        },
+        "download": {
+          "prompt_for_download": false
+        },
+        "translate": {
+          "enabled": true
+        }
+      },
+      "processes": [
+        "msedge"
+      ],
+      "existing": true
+    },
+    {
+      "app": "firefox",
+      "kind": "firefox",
+      "target": "snap/firefox/common/.mozilla/firefox",
+      "data": {
+        "browser.theme.toolbar-theme": 0
+      },
+      "processes": [
+        "firefox"
+      ],
+      "existing": true
+    },
+    {
+      "app": "gemini-desktop",
+      "kind": "json",
+      "target": "snap/gemini-desktop/current/.config/gemini-desktop/Preferences",
+      "data": {
+        "spellcheck": {
+          "dictionaries": [
+            "pl"
+          ],
+          "dictionary": ""
+        }
+      },
+      "processes": [
+        "gemini-desktop"
+      ],
+      "existing": true
+    }
+  ],
+  "git": [
+    [
+      "color.ui",
+      "true"
+    ],
+    [
+      "color.status",
+      "auto"
+    ],
+    [
+      "color.diff",
+      "auto"
+    ],
+    [
+      "alias.la",
+      "!(git config -l | grep alias | cut -c 7-)"
+    ],
+    [
+      "alias.squash",
+      "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+    ],
+    [
+      "alias.co",
+      "checkout"
+    ],
+    [
+      "alias.st",
+      "status"
+    ],
+    [
+      "alias.br",
+      "branch"
+    ],
+    [
+      "alias.ci",
+      "commit"
+    ],
+    [
+      "alias.mt",
+      "mergetool"
+    ],
+    [
+      "alias.cm",
+      "commit"
+    ],
+    [
+      "alias.ca",
+      "commit --amend"
+    ],
+    [
+      "alias.cane",
+      "commit --amend --no-edit"
+    ],
+    [
+      "alias.god",
+      "log --graph --oneline --decorate"
+    ],
+    [
+      "alias.log",
+      "log -- decorate"
+    ],
+    [
+      "alias.potg",
+      "push origin HEAD:refs/for/master"
+    ],
+    [
+      "alias.potd",
+      "!f() { git push origin HEAD:refs/drafts/master && printf \"\\033[0;32mDOBRZE\\033[0m\n\"; }; f"
+    ],
+    [
+      "alias.lg",
+      "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit --date=relative"
+    ],
+    [
+      "alias.lcm",
+      "!git log -1 --pretty=%B | sed 's/^.*: //'"
+    ],
+    [
+      "alias.lch",
+      "log --pretty=format:'%h' -n 1"
+    ],
+    [
+      "alias.ls",
+      "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate"
+    ],
+    [
+      "alias.lsg",
+      "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --graph"
+    ],
+    [
+      "alias.bog",
+      "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --graph"
+    ],
+    [
+      "alias.ll",
+      "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --numstat"
+    ],
+    [
+      "alias.lds",
+      "log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=short"
+    ],
+    [
+      "alias.lt",
+      "describe --tags --abbrev=0"
+    ],
+    [
+      "alias.rt",
+      "tag -l --sort=-v:refname"
+    ],
+    [
+      "alias.d",
+      "diff"
+    ],
+    [
+      "alias.rso",
+      "remote show origin"
+    ],
+    [
+      "alias.test",
+      "!f() { echo -e \"\\033[0;32mtestoo\"; printf \"\\033[0;32mtestZIELONYkolor\\033[0m\n\"; }; f"
+    ],
+    [
+      "alias.alias",
+      "! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
+    ],
+    [
+      "diff.tool",
+      "kdiff3"
+    ],
+    [
+      "difftool.prompt",
+      "false"
+    ],
+    [
+      "core.autocrlf",
+      "input"
+    ],
+    [
+      "core.safecrlf",
+      "warn"
+    ],
+    [
+      "core.editor",
+      "nedit"
+    ],
+    [
+      "core.pager",
+      "less -F -X"
+    ],
+    [
+      "gc.auto",
+      "0"
+    ],
+    [
+      "push.autosetupremote",
+      "true"
+    ],
+    [
+      "push.default",
+      "nothing"
+    ],
+    [
+      "merge.tool",
+      "kdiff3"
+    ],
+    [
+      "transfer.advertisepushoptions",
+      "true"
+    ]
+  ],
+  "gh": [
+    [
+      "git_protocol",
+      "https"
+    ],
+    [
+      "prompt",
+      "enabled"
+    ]
+  ]
+}

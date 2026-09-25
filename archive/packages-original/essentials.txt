@@ -1,0 +1,58 @@
+#!/bin/bash
+
+apt_list = (
+    chatgpt
+    chromium
+    dconf-editor
+    filezilla
+    gcolor3
+    gnome-shell-extension-manager
+    gnome-tweaks
+    micro
+    microsoft-edge-stable
+    network-manager-openvpn-gnome
+    network-manager-pptp-gnome
+    o365
+    pluma
+    putty
+    seahorse
+    teams-for-linux
+    timeshift
+    ulauncher
+    unzip
+    wget
+    wmctrl
+    yad
+    zip
+    grep
+    openlogi
+    vscode
+    telegram
+    signal
+    surfshark
+    db-browser-for-sqlite
+    jq
+    sqlite
+    whatsapp
+    onedrive
+    adguard
+    synaptics-repository-keyring
+    adobe-acrobat-reader
+    tree
+)
+
+dpkg_list = (
+    caprine
+    google-chrome
+    docker-desktop
+    google-drive
+    copyclip
+)
+
+snap_list = (
+    firefox
+    ferdium
+    gemini-desktop
+    gtk-theme-fluent
+    thunderbird
+)

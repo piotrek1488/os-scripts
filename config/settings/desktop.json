@@ -1,0 +1,1639 @@
+{
+  "captured": "2026-09-25",
+  "target": "Ubuntu 26.04 / GNOME 50.1",
+  "baseline": "Gio.Settings.get_default_value(): zainstalowane schematy, nadpisania Ubuntu i lokalne zasady systemowe",
+  "dconf": [
+    {
+      "schema": "org.gnome.desktop.a11y.magnifier",
+      "path": "/org/gnome/desktop/a11y/magnifier/cross-hairs-length",
+      "key": "cross-hairs-length",
+      "current": "58",
+      "default": "4096",
+      "different": true,
+      "summary": "Length of the crosshairs in pixels",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders",
+      "path": "/org/gnome/desktop/app-folders/folder-children",
+      "key": "folder-children",
+      "current": "['System', 'Utilities', 'YaST', 'Pardus']",
+      "default": "@as []",
+      "different": true,
+      "summary": "Folder children",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.background",
+      "path": "/org/gnome/desktop/background/picture-uri",
+      "key": "picture-uri",
+      "current": "'file://@HOME@/.local/share/backgrounds/os-scripts-current.jpg'",
+      "default": "'(firmowa tapeta systemowa)'",
+      "different": true,
+      "summary": "Picture URI",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.background",
+      "path": "/org/gnome/desktop/background/picture-uri-dark",
+      "key": "picture-uri-dark",
+      "current": "'file://@HOME@/.local/share/backgrounds/os-scripts-current.jpg'",
+      "default": "'(firmowa ciemna tapeta systemowa)'",
+      "different": true,
+      "summary": "Picture URI (dark)",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.background",
+      "path": "/org/gnome/desktop/background/primary-color",
+      "key": "primary-color",
+      "current": "'#000000000000'",
+      "default": "'#023c88'",
+      "different": true,
+      "summary": "Primary Color",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.background",
+      "path": "/org/gnome/desktop/background/secondary-color",
+      "key": "secondary-color",
+      "current": "'#000000000000'",
+      "default": "'#5789ca'",
+      "different": true,
+      "summary": "Secondary Color",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.calendar",
+      "path": "/org/gnome/desktop/calendar/show-weekdate",
+      "key": "show-weekdate",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Show the week date in the calendar",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.calendar",
+      "path": "/org/gnome/desktop/calendar/week-start-day",
+      "key": "week-start-day",
+      "current": "'monday'",
+      "default": "'default'",
+      "different": true,
+      "summary": "First day of the week",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.input-sources",
+      "path": "/org/gnome/desktop/input-sources/sources",
+      "key": "sources",
+      "current": "[('xkb', 'pl')]",
+      "default": "@a(ss) []",
+      "different": true,
+      "summary": "List of input sources",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/accent-color",
+      "key": "accent-color",
+      "current": "'blue'",
+      "default": "'orange'",
+      "different": true,
+      "summary": "Accent color",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/clock-show-seconds",
+      "key": "clock-show-seconds",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Whether the clock shows seconds",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/clock-show-weekday",
+      "key": "clock-show-weekday",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Show weekday in clock",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/color-scheme",
+      "key": "color-scheme",
+      "current": "'prefer-dark'",
+      "default": "'default'",
+      "different": true,
+      "summary": "Color scheme",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/cursor-theme",
+      "key": "cursor-theme",
+      "current": "'MacTahoe'",
+      "default": "'Yaru'",
+      "different": true,
+      "summary": "Cursor theme",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/gtk-enable-primary-paste",
+      "key": "gtk-enable-primary-paste",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Enable the primary paste selection",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/gtk-theme",
+      "key": "gtk-theme",
+      "current": "'Fluent-Dark'",
+      "default": "'Yaru'",
+      "different": true,
+      "summary": "Gtk+ Theme",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/icon-theme",
+      "key": "icon-theme",
+      "current": "'Win11'",
+      "default": "'Yaru'",
+      "different": true,
+      "summary": "Icon Theme",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.desktop.interface",
+      "path": "/org/gnome/desktop/interface/show-battery-percentage",
+      "key": "show-battery-percentage",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Show battery percentage",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.peripherals.keyboard",
+      "path": "/org/gnome/desktop/peripherals/keyboard/numlock-state",
+      "key": "numlock-state",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "NumLock state",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.peripherals.mouse",
+      "path": "/org/gnome/desktop/peripherals/mouse/speed",
+      "key": "speed",
+      "current": "0.79746835443037978",
+      "default": "0.0",
+      "different": true,
+      "summary": "Pointer speed",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.peripherals.touchpad",
+      "path": "/org/gnome/desktop/peripherals/touchpad/speed",
+      "key": "speed",
+      "current": "0.38461538461538458",
+      "default": "0.0",
+      "different": true,
+      "summary": "Pointer speed",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.screensaver",
+      "path": "/org/gnome/desktop/screensaver/picture-uri",
+      "key": "picture-uri",
+      "current": "'file://@HOME@/.local/share/backgrounds/os-scripts-current.jpg'",
+      "default": "'file:///usr/share/backgrounds/warty-final-ubuntu.png'",
+      "different": true,
+      "summary": "Picture URI",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.screensaver",
+      "path": "/org/gnome/desktop/screensaver/primary-color",
+      "key": "primary-color",
+      "current": "'#000000000000'",
+      "default": "'#023c88'",
+      "different": true,
+      "summary": "Primary Color",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.screensaver",
+      "path": "/org/gnome/desktop/screensaver/secondary-color",
+      "key": "secondary-color",
+      "current": "'#000000000000'",
+      "default": "'#5789ca'",
+      "different": true,
+      "summary": "Secondary Color",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.session",
+      "path": "/org/gnome/desktop/session/idle-delay",
+      "key": "idle-delay",
+      "current": "uint32 0",
+      "default": "uint32 300",
+      "different": true,
+      "summary": "Time before session is considered idle",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.sound",
+      "path": "/org/gnome/desktop/sound/theme-name",
+      "key": "theme-name",
+      "current": "'freedesktop'",
+      "default": "'Yaru'",
+      "different": true,
+      "summary": "Sound theme name",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.desktop.wm.preferences",
+      "path": "/org/gnome/desktop/wm/preferences/action-middle-click-titlebar",
+      "key": "action-middle-click-titlebar",
+      "current": "'none'",
+      "default": "'lower'",
+      "different": true,
+      "summary": "Action on title bar middle-click",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.mutter",
+      "path": "/org/gnome/mutter/overlay-key",
+      "key": "overlay-key",
+      "current": "'Super_L'",
+      "default": "'Super'",
+      "different": true,
+      "summary": "Modifier to use for extended window management operations",
+      "section": "tweaks"
+    },
+    {
+      "schema": "org.gnome.mutter",
+      "path": "/org/gnome/mutter/workspaces-only-on-primary",
+      "key": "workspaces-only-on-primary",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": "Workspaces only on primary",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.color",
+      "path": "/org/gnome/settings-daemon/plugins/color/night-light-enabled",
+      "key": "night-light-enabled",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "If the night light mode is enabled",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.color",
+      "path": "/org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic",
+      "key": "night-light-schedule-automatic",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": "Use the sunrise and sunset",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.color",
+      "path": "/org/gnome/settings-daemon/plugins/color/night-light-temperature",
+      "key": "night-light-temperature",
+      "current": "uint32 4700",
+      "default": "uint32 2700",
+      "different": true,
+      "summary": "Temperature of the display when enabled",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.power",
+      "path": "/org/gnome/settings-daemon/plugins/power/ambient-enabled",
+      "key": "ambient-enabled",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": "Enable the ALS sensor",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.power",
+      "path": "/org/gnome/settings-daemon/plugins/power/idle-dim",
+      "key": "idle-dim",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": "Dim the screen after a period of inactivity",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.power",
+      "path": "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout",
+      "key": "sleep-inactive-ac-timeout",
+      "current": "3600",
+      "default": "0",
+      "different": true,
+      "summary": "Sleep timeout computer when on AC",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.power",
+      "path": "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type",
+      "key": "sleep-inactive-ac-type",
+      "current": "'nothing'",
+      "default": "'suspend'",
+      "different": true,
+      "summary": "Whether to hibernate, suspend or do nothing when inactive",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.shell",
+      "path": "/org/gnome/shell/app-picker-layout",
+      "key": "app-picker-layout",
+      "current": "[{'org.gnome.Calculator.desktop': <{'position': <0>}>, 'firmware-updater_firmware-updater.desktop': <{'position': <1>}>, 'yad-icon-browser.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'gnome-language-selector.desktop': <{'position': <4>}>, 'o365-excel.desktop': <{'position': <5>}>, 'o365-onedrive.desktop': <{'position': <6>}>, 'org.gnome.Settings.desktop': <{'position': <7>}>, 'o365-onenote.desktop': <{'position': <8>}>, 'o365-powerpoint.desktop': <{'position': <9>}>, 'o365-sharepoint.desktop': <{'position': <10>}>, 'org.gnome.Characters.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'o365-word.desktop': <{'position': <14>}>, 'system-config-printer.desktop': <{'position': <15>}>, 'net.nokyan.Resources.desktop': <{'position': <16>}>, 'desktop-security-center_desktop-security-center.desktop': <{'position': <17>}>, 'update-manager.desktop': <{'position': <18>}>, 'org.gnome.TextEditor.desktop': <{'position': <19>}>, 'o365-vivaengage.desktop': <{'position': <20>}>, 'com.cloudflare.WarpTaskbar.desktop': <{'position': <21>}>, 'chromium.desktop': <{'position': <22>}>, 'firefox_firefox.desktop': <{'position': <23>}>, 'org.gnome.Yelp.desktop': <{'position': <24>}>, 'sublime-text_subl.desktop': <{'position': <25>}>, 'audacity_audacity.desktop': <{'position': <26>}>, 'caprine.desktop': <{'position': <27>}>, 'chatgpt.desktop': <{'position': <28>}>, 'org.gnome.tweaks.desktop': <{'position': <29>}>, 'drawio_drawio.desktop': <{'position': <30>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <31>}>, 'ferdium_ferdium.desktop': <{'position': <32>}>, 'filezilla.desktop': <{'position': <33>}>, 'gemini-desktop_gemini-desktop.desktop': <{'position': <34>}>, 'display-im7.q16.desktop': <{'position': <35>}>, 'org.kde.kdiff3.desktop': <{'position': <36>}>, 'kiro.desktop': <{'position': <37>}>, 'thunderbird_thunderbird.desktop': <{'position': <38>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <39>}>, 'micro.desktop': <{'position': <40>}>, 'nedit.desktop': <{'position': <41>}>, 'notepadqq.desktop': <{'position': <42>}>, 'nuvio-Nuvio.desktop': <{'position': <43>}>, 'nuvio.desktop': <{'position': <44>}>, 'opencomic_opencomic.desktop': <{'position': <45>}>, 'openlogi.desktop': <{'position': <46>}>, 'pluma.desktop': <{'position': <47>}>, 'putty.desktop': <{'position': <48>}>, 'timeshift-gtk.desktop': <{'position': <49>}>, 'ulauncher.desktop': <{'position': <50>}>, 'vlc.desktop': <{'position': <51>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <52>}>, 'teams-for-linux.desktop': <{'position': <53>}>, 'xclicker.desktop': <{'position': <54>}>, 'code_code.desktop': <{'position': <55>}>, 'snap-store_snap-store.desktop': <{'position': <56>}>}]",
+      "default": "[{'org.gnome.Geary.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.Music.desktop': <{'position': <5>}>, 'org.gnome.SimpleScan.desktop': <{'position': <6>}>, 'org.gnome.Settings.desktop': <{'position': <7>}>, 'org.gnome.Boxes.desktop': <{'position': <8>}>, 'org.gnome.Showtime.desktop': <{'position': <9>}>, 'org.gnome.Snapshot.desktop': <{'position': <10>}>, 'org.gnome.Characters.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'org.gnome.Console.desktop': <{'position': <14>}>, 'org.gnome.Tour.desktop': <{'position': <15>}>, 'org.gnome.Yelp.desktop': <{'position': <16>}>}]",
+      "different": true,
+      "summary": "Layout of the app picker",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.shell",
+      "path": "/org/gnome/shell/favorite-apps",
+      "key": "favorite-apps",
+      "current": "['org.gnome.Nautilus.desktop', 'microsoft-edge.desktop', 'org.gnome.Ptyxis.desktop', 'o365-outlook.desktop', 'o365-teams.desktop']",
+      "default": "['ubuntu-desktop-bootstrap_ubuntu-desktop-bootstrap.desktop', 'firefox_firefox.desktop', 'thunderbird_thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Rhythmbox3.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Yelp.desktop']",
+      "different": true,
+      "summary": "List of desktop file IDs for favorite applications",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/Pardus/translate",
+      "key": "translate",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Translate the name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/Pardus/categories",
+      "key": "categories",
+      "current": "['X-Pardus-Apps']",
+      "default": "@as []",
+      "different": true,
+      "summary": "Categories",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/Pardus/name",
+      "key": "name",
+      "current": "'X-Pardus-Apps.directory'",
+      "default": "''",
+      "different": true,
+      "summary": "Folder name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/System/translate",
+      "key": "translate",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Translate the name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/System/name",
+      "key": "name",
+      "current": "'X-GNOME-Shell-System.directory'",
+      "default": "''",
+      "different": true,
+      "summary": "Folder name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/System/apps",
+      "key": "apps",
+      "current": "['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'im-config.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop']",
+      "default": "@as []",
+      "different": true,
+      "summary": "Applications",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/Utilities/translate",
+      "key": "translate",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Translate the name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/Utilities/name",
+      "key": "name",
+      "current": "'X-GNOME-Shell-Utilities.directory'",
+      "default": "''",
+      "different": true,
+      "summary": "Folder name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/Utilities/apps",
+      "key": "apps",
+      "current": "['org.gnome.Papers.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop']",
+      "default": "@as []",
+      "different": true,
+      "summary": "Applications",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/YaST/translate",
+      "key": "translate",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Translate the name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/YaST/categories",
+      "key": "categories",
+      "current": "['X-SuSE-YaST']",
+      "default": "@as []",
+      "different": true,
+      "summary": "Categories",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.desktop.app-folders.folder",
+      "path": "/org/gnome/desktop/app-folders/folders/YaST/name",
+      "key": "name",
+      "current": "'suse-yast.directory'",
+      "default": "''",
+      "different": true,
+      "summary": "Folder name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding",
+      "path": "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command",
+      "key": "command",
+      "current": "'ulauncher-toggle'",
+      "default": "''",
+      "different": true,
+      "summary": "Command",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding",
+      "path": "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name",
+      "key": "name",
+      "current": "'ulauncher'",
+      "default": "''",
+      "different": true,
+      "summary": "Name",
+      "section": "system"
+    },
+    {
+      "schema": "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding",
+      "path": "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding",
+      "key": "binding",
+      "current": "'<Control>space'",
+      "default": "''",
+      "different": true,
+      "summary": "Binding",
+      "section": "system"
+    },
+    {
+      "uuid": "Vitals@CoreCoding.com",
+      "schema": "org.gnome.shell.extensions.vitals",
+      "path": "/org/gnome/shell/extensions/vitals/hot-sensors",
+      "key": "hot-sensors",
+      "current": "['_processor_usage_', '_memory_usage_', '_system_load_1m_']",
+      "default": "['_memory_usage_', '_system_load_1m_', '__network-rx_max__']",
+      "different": true,
+      "summary": "Sensors to show in panel",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/context-menu-items",
+      "key": "context-menu-items",
+      "current": "[{'id': 'ArcMenu_Settings', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}, {'id': 'ArcMenu_PanelExtensionSettings', 'name': 'Panel Extension Settings', 'icon': 'application-x-addon-symbolic'}, {'id': 'ArcMenu_Separator', 'name': 'Separator', 'icon': 'list-remove-symbolic'}, {'id': 'ArcMenu_PowerOptions', 'name': 'Power Options', 'icon': 'system-shutdown-symbolic'}, {'id': 'ArcMenu_ActivitiesOverview', 'name': 'Activities Overview', 'icon': 'view-fullscreen-symbolic'}, {'id': 'ArcMenu_ShowDesktop', 'name': 'Show Desktop', 'icon': 'computer-symbolic'}]",
+      "default": "[{'id': 'org.gnome.Extensions.desktop'}, {'id': 'ArcMenu_Settings', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}, {'id': 'ArcMenu_PanelExtensionSettings', 'name': 'Panel Extension Settings', 'icon': 'application-x-addon-symbolic'}, {'id': 'ArcMenu_Separator', 'name': 'Separator', 'icon': 'list-remove-symbolic'}, {'id': 'ArcMenu_PowerOptions', 'name': 'Power Options', 'icon': 'system-shutdown-symbolic'}, {'id': 'ArcMenu_ActivitiesOverview', 'name': 'Activities Overview', 'icon': 'view-fullscreen-symbolic'}, {'id': 'ArcMenu_ShowDesktop', 'name': 'Show Desktop', 'icon': 'computer-symbolic'}]",
+      "different": true,
+      "summary": "Context menu shortcut items",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/eleven-layout-extra-shortcuts",
+      "key": "eleven-layout-extra-shortcuts",
+      "current": "[{'id': 'org.gnome.Nautilus.desktop'}, {'id': 'org.gnome.Settings.desktop'}]",
+      "default": "[{'id': 'org.gnome.Nautilus.desktop'}, {'id': 'org.gnome.Terminal.desktop'}, {'id': 'org.gnome.Settings.desktop'}]",
+      "different": true,
+      "summary": "'11' layout extra shortcuts",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/hide-overview-on-startup",
+      "key": "hide-overview-on-startup",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Hide overview on startup",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/menu-button-icon",
+      "key": "menu-button-icon",
+      "current": "'@HOME@/.local/share/icons/os-scripts-menu.webp'",
+      "default": "'resource:///org/gnome/shell/extensions/arcmenu/icons/scalable/actions/icon-arcmenu-logo-symbolic.svg'",
+      "different": true,
+      "summary": "ArcMenu button icon",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/menu-button-icon-size",
+      "key": "menu-button-icon-size",
+      "current": "32",
+      "default": "20",
+      "different": true,
+      "summary": "Size of the menu buton icon.",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/menu-button-middle-click-action",
+      "key": "menu-button-middle-click-action",
+      "current": "'None'",
+      "default": "'ArcMenu'",
+      "different": true,
+      "summary": "Middle Click Action on the Menu Button",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/menu-height",
+      "key": "menu-height",
+      "current": "650",
+      "default": "550",
+      "different": true,
+      "summary": "Menu Height",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/menu-layout",
+      "key": "menu-layout",
+      "current": "'11'",
+      "default": "'arcmenu'",
+      "different": true,
+      "summary": "Menu layout",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/multi-monitor",
+      "key": "multi-monitor",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Display on all monitors",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/pinned-apps",
+      "key": "pinned-apps",
+      "current": "[{'id': 'org.gnome.Nautilus.desktop'}, {'id': 'gnome-extensions prefs arcmenu@arcmenu.com', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}]",
+      "default": "[{'id': 'firefox.desktop'}, {'id': 'org.gnome.Nautilus.desktop'}, {'id': 'org.gnome.Terminal.desktop'}, {'id': 'gnome-extensions prefs arcmenu@arcmenu.com', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}]",
+      "different": true,
+      "summary": "Pinned Apps",
+      "section": "extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "schema": "org.gnome.shell.extensions.arcmenu",
+      "path": "/org/gnome/shell/extensions/arcmenu/power-options",
+      "key": "power-options",
+      "current": "[(0, true), (1, true), (4, true), (2, true), (3, true), (5, false), (6, false), (7, false)]",
+      "default": "[(0, true), (1, true), (2, true), (3, true), (4, false), (5, false), (6, false), (7, false)]",
+      "different": true,
+      "summary": "Power Options",
+      "section": "extensions"
+    },
+    {
+      "uuid": "dash-to-panel@jderose9.github.com",
+      "schema": "org.gnome.shell.extensions.dash-to-panel",
+      "path": "/org/gnome/shell/extensions/dash-to-panel/animate-appicon-hover-animation-extent",
+      "key": "animate-appicon-hover-animation-extent",
+      "current": "{'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}",
+      "default": "{'RIPPLE': 4, 'PLANK': 4}",
+      "different": true,
+      "summary": "App icon hover animation extent (maximum number of animated icons)",
+      "section": "extensions"
+    },
+    {
+      "uuid": "dash-to-panel@jderose9.github.com",
+      "schema": "org.gnome.shell.extensions.dash-to-panel",
+      "path": "/org/gnome/shell/extensions/dash-to-panel/panel-anchors",
+      "key": "panel-anchors",
+      "current": "'{\"0\":\"MIDDLE\",\"1\":\"MIDDLE\",\"2\":\"MIDDLE\"}'",
+      "default": "'{}'",
+      "different": true,
+      "summary": "Positions along screen edge",
+      "section": "extensions"
+    },
+    {
+      "uuid": "dash-to-panel@jderose9.github.com",
+      "schema": "org.gnome.shell.extensions.dash-to-panel",
+      "path": "/org/gnome/shell/extensions/dash-to-panel/panel-element-positions",
+      "key": "panel-element-positions",
+      "current": "'{\"0\":[{\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}],\"1\":[{\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}],\"2\":[{\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}]}'",
+      "default": "'{}'",
+      "different": true,
+      "summary": "Panel element positions",
+      "section": "extensions"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "schema": "org.gnome.shell.extensions.date-menu-formatter",
+      "path": "/org/gnome/shell/extensions/date-menu-formatter/apply-all-panels",
+      "key": "apply-all-panels",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Should extension modify all Dash To Panel panels",
+      "section": "extensions"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "schema": "org.gnome.shell.extensions.date-menu-formatter",
+      "path": "/org/gnome/shell/extensions/date-menu-formatter/custom-locale",
+      "key": "custom-locale",
+      "current": "'pl-PL'",
+      "default": "''",
+      "different": true,
+      "summary": "Custom locale",
+      "section": "extensions"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "schema": "org.gnome.shell.extensions.date-menu-formatter",
+      "path": "/org/gnome/shell/extensions/date-menu-formatter/font-weight",
+      "key": "font-weight",
+      "current": "'bold'",
+      "default": "'initial'",
+      "different": true,
+      "summary": "Font weight",
+      "section": "extensions"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "schema": "org.gnome.shell.extensions.date-menu-formatter",
+      "path": "/org/gnome/shell/extensions/date-menu-formatter/formatter",
+      "key": "formatter",
+      "current": "'02_original'",
+      "default": "'01_luxon'",
+      "different": true,
+      "summary": "Date formatter",
+      "section": "extensions"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "schema": "org.gnome.shell.extensions.date-menu-formatter",
+      "path": "/org/gnome/shell/extensions/date-menu-formatter/pattern",
+      "key": "pattern",
+      "current": "'H:mm:ss\\\\ndd/MM/yyyy'",
+      "default": "'EEE, MMM d  H : mm'",
+      "different": true,
+      "summary": "Date format pattern",
+      "section": "extensions"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "schema": "org.gnome.shell.extensions.date-menu-formatter",
+      "path": "/org/gnome/shell/extensions/date-menu-formatter/use-default-locale",
+      "key": "use-default-locale",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": "Should default system locale be used",
+      "section": "extensions"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "schema": "org.gnome.shell.extensions.just-perfection",
+      "path": "/org/gnome/shell/extensions/just-perfection/animation",
+      "key": "animation",
+      "current": "4",
+      "default": "1",
+      "different": true,
+      "summary": "0 means disabled, 1 means default speed, animation speed otherwise",
+      "section": "extensions"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "schema": "org.gnome.shell.extensions.just-perfection",
+      "path": "/org/gnome/shell/extensions/just-perfection/clock-menu-position",
+      "key": "clock-menu-position",
+      "current": "1",
+      "default": "0",
+      "different": true,
+      "summary": "0 means center, 1 means right, 2 means left",
+      "section": "extensions"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "schema": "org.gnome.shell.extensions.just-perfection",
+      "path": "/org/gnome/shell/extensions/just-perfection/keyboard-layout",
+      "key": "keyboard-layout",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": "Keyboard Layout",
+      "section": "extensions"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "schema": "org.gnome.shell.extensions.just-perfection",
+      "path": "/org/gnome/shell/extensions/just-perfection/notification-banner-position",
+      "key": "notification-banner-position",
+      "current": "5",
+      "default": "1",
+      "different": true,
+      "summary": "0: top start, 1: top center, 2: top end, 3: bottom start, 4: bottom center, 5: bottom end",
+      "section": "extensions"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "schema": "org.gnome.shell.extensions.just-perfection",
+      "path": "/org/gnome/shell/extensions/just-perfection/panel-in-overview",
+      "key": "panel-in-overview",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Panel in Overview",
+      "section": "extensions"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "schema": "org.gnome.shell.extensions.just-perfection",
+      "path": "/org/gnome/shell/extensions/just-perfection/support-notifier-type",
+      "key": "support-notifier-type",
+      "current": "0",
+      "default": "1",
+      "different": true,
+      "summary": "0 Means Never, 1 Means New Releases",
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/dnd-quick-toggle-indicator-position",
+      "key": "dnd-quick-toggle-indicator-position",
+      "current": "'date-menu'",
+      "default": "'system-tray'",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/system-items-layout-enabled",
+      "key": "system-items-layout-enabled",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/system-items-layout-hide-lock",
+      "key": "system-items-layout-hide-lock",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/system-items-layout-hide-screenshot",
+      "key": "system-items-layout-hide-screenshot",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/system-items-layout-hide-shutdown",
+      "key": "system-items-layout-hide-shutdown",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/system-items-layout-order",
+      "key": "system-items-layout-order",
+      "current": "['shutdown', 'lock', 'settings', 'desktopSpacer', 'screenshot', 'laptopSpacer', 'battery']",
+      "default": "['battery', 'laptopSpacer', 'screenshot', 'settings', 'desktopSpacer', 'lock', 'shutdown']",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "schema": "org.gnome.shell.extensions.quick-settings-tweaks",
+      "path": "/org/gnome/shell/extensions/quick-settings-tweaks/volume-mixer-enabled",
+      "key": "volume-mixer-enabled",
+      "current": "false",
+      "default": "true",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "run-or-raise@edvard.cz",
+      "schema": "org.gnome.shell.extensions.run-or-raise",
+      "path": "/org/gnome/shell/extensions/run-or-raise/move-window-to-active-workspace",
+      "key": "move-window-to-active-workspace",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Move window to current workspace before focusing",
+      "section": "extensions"
+    },
+    {
+      "uuid": "user-theme@gnome-shell-extensions.gcampax.github.com",
+      "schema": "org.gnome.shell.extensions.user-theme",
+      "path": "/org/gnome/shell/extensions/user-theme/name",
+      "key": "name",
+      "current": "'Fluent-Dark'",
+      "default": "''",
+      "different": true,
+      "summary": "Theme name",
+      "section": "extensions"
+    },
+    {
+      "uuid": "lockscreen-studio@pedro.projects",
+      "schema": "org.gnome.shell.extensions.lockscreen-studio",
+      "path": "/org/gnome/shell/extensions/lockscreen-studio/clock-font-size",
+      "key": "clock-font-size",
+      "current": "200",
+      "default": "80",
+      "different": true,
+      "summary": "Clock font size",
+      "section": "extensions"
+    },
+    {
+      "uuid": "lockscreen-studio@pedro.projects",
+      "schema": "org.gnome.shell.extensions.lockscreen-studio",
+      "path": "/org/gnome/shell/extensions/lockscreen-studio/date-font-size",
+      "key": "date-font-size",
+      "current": "50",
+      "default": "24",
+      "different": true,
+      "summary": "Date font size",
+      "section": "extensions"
+    },
+    {
+      "uuid": "ding@rastersoft.com",
+      "schema": "org.gnome.shell.extensions.ding",
+      "path": "/org/gnome/shell/extensions/ding/icon-size",
+      "key": "icon-size",
+      "current": "'small'",
+      "default": "'standard'",
+      "different": true,
+      "summary": "Icon size",
+      "section": "extensions"
+    },
+    {
+      "uuid": "ding@rastersoft.com",
+      "schema": "org.gnome.shell.extensions.ding",
+      "path": "/org/gnome/shell/extensions/ding/start-corner",
+      "key": "start-corner",
+      "current": "'top-left'",
+      "default": "'bottom-right'",
+      "different": true,
+      "summary": "New icons start corner",
+      "section": "extensions"
+    },
+    {
+      "uuid": "tiling-assistant@ubuntu.com",
+      "schema": "org.gnome.shell.extensions.tiling-assistant",
+      "path": "/org/gnome/shell/extensions/tiling-assistant/focus-hint-color",
+      "key": "focus-hint-color",
+      "current": "'rgb(0,115,229)'",
+      "default": "''",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "tiling-assistant@ubuntu.com",
+      "schema": "org.gnome.shell.extensions.tiling-assistant",
+      "path": "/org/gnome/shell/extensions/tiling-assistant/tiling-popup-all-workspace",
+      "key": "tiling-popup-all-workspace",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": null,
+      "section": "extensions"
+    },
+    {
+      "uuid": "ubuntu-dock@ubuntu.com",
+      "schema": "org.gnome.shell.extensions.dash-to-dock",
+      "path": "/org/gnome/shell/extensions/dash-to-dock/multi-monitor",
+      "key": "multi-monitor",
+      "current": "true",
+      "default": "false",
+      "different": true,
+      "summary": "Enable multi-monitor docks",
+      "section": "extensions"
+    },
+    {
+      "uuid": "ubuntu-dock@ubuntu.com",
+      "schema": "org.gnome.shell.extensions.dash-to-dock",
+      "path": "/org/gnome/shell/extensions/dash-to-dock/dock-position",
+      "key": "dock-position",
+      "current": "'BOTTOM'",
+      "default": "'LEFT'",
+      "different": true,
+      "summary": "Dock position",
+      "section": "extensions"
+    },
+    {
+      "uuid": "ubuntu-dock@ubuntu.com",
+      "schema": "org.gnome.shell.extensions.dash-to-dock",
+      "path": "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",
+      "key": "dash-max-icon-size",
+      "current": "36",
+      "default": "48",
+      "different": true,
+      "summary": "Maximum dash icon size",
+      "section": "extensions"
+    }
+  ],
+  "extensions": [
+    {
+      "uuid": "qr-greeter@himmelblau-idm.org",
+      "name": "Himmelblau QR Greeter",
+      "version": 1,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": false,
+      "system": true,
+      "url": "",
+      "schemas": [],
+      "bundled": false,
+      "state": "INACTIVE",
+      "package": "himmelblau-qr-greeter"
+    },
+    {
+      "uuid": "ding@rastersoft.com",
+      "name": "Desktop Icons NG (DING)",
+      "version": null,
+      "shell-version": [
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": true,
+      "url": "https://gitlab.com/rastersoft/desktop-icons-ng",
+      "schemas": [
+        "org.gnome.shell.extensions.ding"
+      ],
+      "bundled": false,
+      "state": "ACTIVE",
+      "package": "gnome-shell-ubuntu-extensions"
+    },
+    {
+      "uuid": "ubuntu-dock@ubuntu.com",
+      "name": "Ubuntu Dock",
+      "version": 105,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": true,
+      "url": "https://micheleg.github.io/dash-to-dock/",
+      "schemas": [],
+      "bundled": false,
+      "state": "INITIALIZED",
+      "package": "gnome-shell-ubuntu-extensions"
+    },
+    {
+      "uuid": "snapd-search-provider@canonical.com",
+      "name": "Snapd Search Provider",
+      "version": null,
+      "shell-version": [
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": true,
+      "url": "https://gitlab.gnome.org/Community/Ubuntu/gnome-shell-snapd-search-provider",
+      "schemas": [],
+      "bundled": false,
+      "state": "ACTIVE",
+      "package": "gnome-shell-ubuntu-extensions"
+    },
+    {
+      "uuid": "web-search-provider@ubuntu.com",
+      "name": "Web Search Provider",
+      "version": null,
+      "shell-version": [
+        "44",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": true,
+      "url": "https://gitlab.gnome.org/Community/Ubuntu/gnome-shell-web-search-provider",
+      "schemas": [],
+      "bundled": false,
+      "state": "ACTIVE",
+      "package": "gnome-shell-ubuntu-extensions"
+    },
+    {
+      "uuid": "tiling-assistant@ubuntu.com",
+      "name": "Ubuntu Tiling Assistant",
+      "version": 54,
+      "shell-version": [
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": true,
+      "url": "https://launchpad.net/ubuntu/+source/gnome-shell-extension-tiling-assistant",
+      "schemas": [
+        "org.gnome.shell.extensions.tiling-assistant"
+      ],
+      "bundled": false,
+      "state": "ACTIVE",
+      "package": "gnome-shell-ubuntu-extensions"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "name": "ArcMenu",
+      "version": 73,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://gitlab.com/arcmenu/ArcMenu",
+      "schemas": [
+        "org.gnome.shell.extensions.arcmenu"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "add-to-desktop@tommimon.github.com",
+      "name": "Add to Desktop",
+      "version": 16,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://github.com/Tommimon/add-to-desktop",
+      "schemas": [],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "clipboard-indicator@tudmotu.com",
+      "name": "Clipboard Indicator",
+      "version": 71,
+      "shell-version": [
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator",
+      "schemas": [
+        "org.gnome.shell.extensions.clipboard-indicator"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "dash-to-panel@jderose9.github.com",
+      "name": "Dash to Panel",
+      "version": 74,
+      "shell-version": [
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://github.com/home-sweet-gnome/dash-to-panel",
+      "schemas": [
+        "org.gnome.shell.extensions.dash-to-panel"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "date-menu-formatter@marcinjakubowski.github.com",
+      "name": "Date Menu Formatter",
+      "version": 19,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://github.com/marcinjakubowski/date-menu-formatter",
+      "schemas": [
+        "org.gnome.shell.extensions.date-menu-formatter"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "name": "Just Perfection",
+      "version": 37,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://gitlab.gnome.org/jrahmatzadeh/just-perfection",
+      "schemas": [
+        "org.gnome.shell.extensions.just-perfection"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "quick-settings-tweaks@qwreey",
+      "name": "Quick Settings Tweaks",
+      "version": 29,
+      "shell-version": [
+        "46",
+        "47",
+        "48"
+      ],
+      "enabled": true,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/qwreey/quick-settings-tweaks",
+      "schemas": [
+        "org.gnome.shell.extensions.quick-settings-tweaks"
+      ],
+      "bundled": true,
+      "state": "OUT OF DATE"
+    },
+    {
+      "uuid": "run-or-raise@edvard.cz",
+      "name": "Run or raise",
+      "version": 44,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://github.com/CZ-NIC/run-or-raise",
+      "schemas": [
+        "org.gnome.shell.extensions.run-or-raise"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "user-theme@gnome-shell-extensions.gcampax.github.com",
+      "name": "User Themes",
+      "version": 79,
+      "shell-version": [
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://gitlab.gnome.org/GNOME/gnome-shell-extensions",
+      "schemas": [
+        "org.gnome.shell.extensions.user-theme"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "Vitals@CoreCoding.com",
+      "name": "Vitals",
+      "version": 85,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": false,
+      "url": "https://github.com/corecoding/Vitals",
+      "schemas": [
+        "org.gnome.shell.extensions.vitals"
+      ],
+      "bundled": true,
+      "state": "ACTIVE"
+    },
+    {
+      "uuid": "lockscreen-studio@pedro.projects",
+      "name": "Lockscreen Studio",
+      "version": 7,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/phenrique-coder/lockscreen-studio",
+      "schemas": [
+        "org.gnome.shell.extensions.lockscreen-studio"
+      ],
+      "bundled": true,
+      "state": "INACTIVE"
+    },
+    {
+      "uuid": "CoverflowAltTab@palatis.blogspot.com",
+      "name": "Coverflow Alt-Tab",
+      "version": 88,
+      "shell-version": [
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/dsheeler/CoverflowAltTab",
+      "schemas": [
+        "org.gnome.shell.extensions.coverflowalttab"
+      ],
+      "bundled": true,
+      "state": "INITIALIZED"
+    },
+    {
+      "uuid": "blur-my-shell@aunetx",
+      "name": "Blur my Shell",
+      "version": 72,
+      "shell-version": [
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/aunetx/blur-my-shell",
+      "schemas": [
+        "org.gnome.shell.extensions.blur-my-shell",
+        "org.gnome.shell.extensions.blur-my-shell.appfolder",
+        "org.gnome.shell.extensions.blur-my-shell.applications",
+        "org.gnome.shell.extensions.blur-my-shell.coverflow-alt-tab",
+        "org.gnome.shell.extensions.blur-my-shell.dash-to-dock",
+        "org.gnome.shell.extensions.blur-my-shell.dash-to-panel",
+        "org.gnome.shell.extensions.blur-my-shell.hidetopbar",
+        "org.gnome.shell.extensions.blur-my-shell.lockscreen",
+        "org.gnome.shell.extensions.blur-my-shell.overview",
+        "org.gnome.shell.extensions.blur-my-shell.panel",
+        "org.gnome.shell.extensions.blur-my-shell.screenshot",
+        "org.gnome.shell.extensions.blur-my-shell.window-list"
+      ],
+      "bundled": true,
+      "state": "INITIALIZED"
+    },
+    {
+      "uuid": "compiz-alike-magic-lamp-effect@hermes83.github.com",
+      "name": "Compiz alike magic lamp effect",
+      "version": 25,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/hermes83/compiz-alike-magic-lamp-effect",
+      "schemas": [
+        "org.gnome.shell.extensions.com.github.hermes83.compiz-alike-magic-lamp-effect"
+      ],
+      "bundled": true,
+      "state": "INITIALIZED"
+    },
+    {
+      "uuid": "compiz-windows-effect@hermes83.github.com",
+      "name": "Compiz windows effect",
+      "version": 31,
+      "shell-version": [
+        "49",
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/hermes83/compiz-windows-effect",
+      "schemas": [
+        "org.gnome.shell.extensions.com.github.hermes83.compiz-windows-effect"
+      ],
+      "bundled": true,
+      "state": "INITIALIZED"
+    },
+    {
+      "uuid": "dash2dock-lite@icedman.github.com",
+      "name": "Dash2Dock Animated",
+      "version": 92,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/icedman/dash2dock-lite",
+      "schemas": [
+        "org.gnome.shell.extensions.dash2dock-lite"
+      ],
+      "bundled": true,
+      "state": "INITIALIZED"
+    },
+    {
+      "uuid": "space-bar@luchrioh",
+      "name": "Space Bar",
+      "version": 39,
+      "shell-version": [
+        "50"
+      ],
+      "enabled": false,
+      "active": false,
+      "system": false,
+      "url": "https://github.com/christopher-l/space-bar",
+      "schemas": [
+        "org.gnome.shell.extensions.space-bar",
+        "org.gnome.shell.extensions.space-bar.appearance",
+        "org.gnome.shell.extensions.space-bar.behavior",
+        "org.gnome.shell.extensions.space-bar.shortcuts",
+        "org.gnome.shell.extensions.space-bar.state"
+      ],
+      "bundled": true,
+      "state": "INITIALIZED"
+    },
+    {
+      "uuid": "snapd-prompting@canonical.com",
+      "name": "SNAPD Permission Prompting",
+      "version": null,
+      "shell-version": [
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": true,
+      "url": "",
+      "schemas": [],
+      "bundled": false,
+      "state": "ACTIVE",
+      "package": "gnome-shell-ubuntu-extensions"
+    },
+    {
+      "uuid": "ubuntu-appindicators@ubuntu.com",
+      "name": "Ubuntu AppIndicators",
+      "version": null,
+      "shell-version": [
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50"
+      ],
+      "enabled": true,
+      "active": true,
+      "system": true,
+      "url": "https://github.com/ubuntu/gnome-shell-extension-appindicator",
+      "schemas": [
+        "org.gnome.shell.extensions.appindicator"
+      ],
+      "bundled": false,
+      "state": "ACTIVE",
+      "package": "gnome-shell-ubuntu-extensions"
+    }
+  ],
+  "mime": [
+    {
+      "type": "text/html",
+      "desktop": "microsoft-edge.desktop"
+    },
+    {
+      "type": "x-scheme-handler/http",
+      "desktop": "microsoft-edge.desktop"
+    },
+    {
+      "type": "x-scheme-handler/https",
+      "desktop": "microsoft-edge.desktop"
+    },
+    {
+      "type": "x-scheme-handler/about",
+      "desktop": "microsoft-edge.desktop"
+    },
+    {
+      "type": "x-scheme-handler/unknown",
+      "desktop": "microsoft-edge.desktop"
+    },
+    {
+      "type": "x-scheme-handler/codex",
+      "desktop": "chatgpt.desktop"
+    }
+  ],
+  "timezone": "Europe/Warsaw",
+  "ntp": true,
+  "power_profile": "balanced",
+  "account_language": "pl_PL.UTF-8",
+  "account_formats": "pl_PL.UTF-8",
+  "system_language": "en_US.UTF-8",
+  "system_keyboard": {
+    "layout": "us",
+    "model": "pc105"
+  },
+  "custom_shortcuts": [
+    "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+  ],
+  "monitors": [
+    {
+      "connector": "DP-4",
+      "vendor": "DEL",
+      "model": "DELL U2722DE",
+      "x": 2560,
+      "y": 0,
+      "scale": 1.0,
+      "rotation": 0,
+      "primary": false,
+      "width": 2560,
+      "height": 1440,
+      "refresh": 59.9505500793457
+    },
+    {
+      "connector": "eDP-1",
+      "vendor": "LGD",
+      "model": "0x07b5",
+      "x": 1572,
+      "y": 1440,
+      "scale": 1.25,
+      "rotation": 0,
+      "primary": false,
+      "width": 2560,
+      "height": 1600,
+      "refresh": 120.00042724609375
+    },
+    {
+      "connector": "DP-6",
+      "vendor": "DEL",
+      "model": "DELL P2723DE",
+      "x": 0,
+      "y": 0,
+      "scale": 1.0,
+      "rotation": 0,
+      "primary": true,
+      "width": 2560,
+      "height": 1440,
+      "refresh": 59.9505500793457
+    }
+  ]
+}

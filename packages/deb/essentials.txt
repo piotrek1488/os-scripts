@@ -1,0 +1,9 @@
+# Linki DEB, po jednym w wierszu. Sprawdzono 2026-09-25, Ubuntu 26.04 / amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Źródła: SOURCES.md. Pobieranie i instalacja: bash install.sh --source deb.
+https://github.com/bankjaneo/caprine/releases/download/v2.61.25/Caprine-2.61.25-amd64.deb
+https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_amd64.deb
+https://github.com/AprilNEA/OpenLogi/releases/download/v0.8.8/openlogi-v0.8.8-linux-amd64.deb
+https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
+https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+https://github.com/Walkercito/CopyClip/releases/download/v0.2.6/copyclip_0.2.6_amd64.deb

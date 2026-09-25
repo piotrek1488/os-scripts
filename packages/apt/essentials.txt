@@ -1,0 +1,43 @@
+# Zweryfikowano 2026-09-24: Ubuntu 26.04 (resolute), amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Zewnętrzne repozytoria i klucze: repositories.sources (konfiguracja opisana w README).
+dconf-editor
+filezilla
+gcolor3
+gnome-shell-extension-manager
+gnome-tweaks
+micro
+nedit
+microsoft-edge-stable
+network-manager-openvpn-gnome
+network-manager-pptp-gnome
+o365
+pluma
+putty
+seahorse
+teams-for-linux
+timeshift
+ulauncher
+unzip
+wget
+wmctrl
+yad
+zip
+grep
+code
+signal-desktop
+onedrive
+tree
+gh
+git
+gitk
+curl
+google-chrome-stable
+jq
+surfshark
+python3
+python3-venv
+python3-pip
+python3-docker
+python3-fuzzywuzzy
+python3-pytz

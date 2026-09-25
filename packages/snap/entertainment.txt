@@ -1,0 +1,6 @@
+# Zweryfikowano 2026-09-24: Ubuntu 26.04 (resolute), amd64.
+# Źródła i ograniczenia: ../VERIFICATION.md.
+# Kanał latest/stable; zachowaj --classic tam, gdzie występuje.
+audacity
+opencomic
+jdownloader2

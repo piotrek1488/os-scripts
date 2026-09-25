@@ -1,0 +1,17 @@
+# Systemowy Python Ulaunchera; ~/.venv nie jest używany przez jego dodatki.
+# Ubuntu 26.04, sprawdzone 2026-09-25.
+ulauncher
+python3-pint
+python3-simpleeval
+python3-parsedatetime
+python3-pytz
+python3-babel
+python3-github
+python3-docker
+python3-requests
+python3-bs4
+gir1.2-notify-0.7
+bluez
+gnome-terminal
+gnome-control-center
+patch
