@@ -1,0 +1,29 @@
+name: Shell CI
+on:
+  push:
+    branches: [macos]
+  pull_request:
+    branches: [macos]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Check Bash syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' scripts < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
+          ((${#scripts[@]})) || { echo 'No Bash files found'; exit 1; }
+          for script in "${scripts[@]}"; do bash -n "$script"; done
+      - name: ShellCheck
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' scripts < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
+          shellcheck --severity=warning "${scripts[@]}"

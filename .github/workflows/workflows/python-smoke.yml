@@ -1,0 +1,45 @@
+name: Python generator smoke test
+on:
+  push:
+    branches: [macos]
+  pull_request:
+    branches: [macos]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  generator:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Test generator in temporary directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          workspace="$(mktemp -d)"
+          trap 'rm -rf "$workspace"' EXIT
+          cd "$workspace"
+          bash "$GITHUB_WORKSPACE/new_python_proj_setup.sh" ci_demo
+          cd ci_demo
+          test -f src/main_module.py
+          test -f src/__init__.py
+          test -f main.py
+          test -f tests/test_basic.py
+          python -m compileall -q .
+          python main.py | grep -F 'Welcome to ci_demo!'
+          python -m pip install pytest
+          python -m pytest -q
+      - name: Verify missing argument fails cleanly
+        shell: bash
+        run: |
+          if bash new_python_proj_setup.sh; then
+            echo 'Generator should reject a missing name' >&2
+            exit 1
+          fi

@@ -1,0 +1,32 @@
+name: Homebrew catalog validation
+on:
+  push:
+    branches: [macos]
+    paths: ['new_mac_setup.sh', 'ci/validate_packages.py', '.github/workflows/homebrew-validator.yml']
+  pull_request:
+    branches: [macos]
+    paths: ['new_mac_setup.sh', 'ci/validate_packages.py', '.github/workflows/homebrew-validator.yml']
+  schedule:
+    - cron: '17 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python ci/validate_packages.py --offline new_mac_setup.sh
+  online:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python ci/validate_packages.py --online new_mac_setup.sh

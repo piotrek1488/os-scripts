@@ -1,0 +1,36 @@
+name: Zsh config validation
+on:
+  push:
+    branches: [macos]
+    paths: ['zsh_config_files/**', '.github/workflows/zsh-ci.yml']
+  pull_request:
+    branches: [macos]
+    paths: ['zsh_config_files/**', '.github/workflows/zsh-ci.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  zsh:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Parse all Zsh config files
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in zsh_config_files/.zshrc zsh_config_files/.zshrc.user zsh_config_files/.zsh_aliases; do
+            test -f "$file"
+            /bin/zsh -n "$file"
+          done
+      - name: Source configs in isolated temporary home
+        shell: bash
+        run: |
+          set -euo pipefail
+          temp_home="$(mktemp -d)"
+          trap 'rm -rf "$temp_home"' EXIT
+          cp zsh_config_files/.zshrc "$temp_home/.zshrc"
+          cp zsh_config_files/.zshrc.user "$temp_home/.zshrc.user"
+          cp zsh_config_files/.zsh_aliases "$temp_home/.zsh_aliases"
+          # Do not execute Homebrew, nvm or external installers while testing.
+          HOME="$temp_home" ZDOTDIR="$temp_home" PATH=/usr/bin:/bin:/usr/sbin:/sbin \
+            /bin/zsh -f -c 'source "$ZDOTDIR/.zshrc"; alias ll >/dev/null'

@@ -1,0 +1,32 @@
+name: macOS compatibility
+on:
+  push:
+    branches: [macos]
+  pull_request:
+    branches: [macos]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos-static:
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check shipped shell interpreters
+        shell: bash
+        run: |
+          set -euo pipefail
+          /bin/bash -n new_mac_setup.sh
+          /bin/bash -n new_python_proj_setup.sh
+          for file in zsh_config_files/.zshrc zsh_config_files/.zshrc.user zsh_config_files/.zsh_aliases; do
+            /bin/zsh -n "$file"
+          done
+      - name: Check presence of system utilities (without installing software)
+        shell: bash
+        run: |
+          set -euo pipefail
+          for cmd in bash zsh curl hdiutil ditto uname; do
+            command -v "$cmd" >/dev/null || { echo "Missing: $cmd" >&2; exit 1; }
+          done
+          echo 'Static macOS checks passed. Installer was NOT executed.'

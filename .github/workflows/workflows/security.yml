@@ -1,0 +1,34 @@
+name: Secrets and Actions lint
+on:
+  push:
+    branches: [macos]
+  pull_request:
+    branches: [macos]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.24'
+      - name: Install pinned Gitleaks
+        run: go install github.com/zricethezav/gitleaks/v8@v8.24.3
+      - name: Scan Git history for secrets
+        run: '"$(go env GOPATH)/bin/gitleaks" git --redact --exit-code 1 .'
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.24'
+      - name: Install pinned actionlint
+        run: go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.7
+      - name: Lint workflows
+        run: '"$(go env GOPATH)/bin/actionlint" -color'
