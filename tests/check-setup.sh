@@ -16,7 +16,11 @@ for file in install.sh scripts/{setup-repositories,install-adguard,setup-ulaunch
 #!/usr/bin/env bash
 set -euo pipefail
 name=${0##*/}
-printf '%s %s\n' "$name" "$*" >> "$OS_SCRIPTS_SETUP_LOG"
+if (( $# > 0 )); then
+    printf '%s %s\n' "$name" "$*" >> "$OS_SCRIPTS_SETUP_LOG"
+else
+    printf '%s\n' "$name" >> "$OS_SCRIPTS_SETUP_LOG"
+fi
 if [[ $name == "${OS_SCRIPTS_SETUP_FAIL:-}" ]]; then exit 23; fi
 # Wykrywa błędne flagi przekazane przez nadrzędny skrypt.
 case $name in
@@ -29,7 +33,20 @@ done
 cat > "$work/bin/sudo" <<'MOCK'
 #!/usr/bin/env bash
 printf 'sudo %s\n' "$*" >> "$OS_SCRIPTS_SETUP_LOG"
-[[ $* == 'apt-get update' || $* == 'apt-get install -y -- ca-certificates curl jq snapd dconf-cli python3 python3-venv' ]]
+case "$*" in
+    'apt-get update' | \
+    'apt-get install -y -- ca-certificates curl jq snapd dconf-cli python3 python3-venv' | \
+    'btmgmt ssp on' | \
+    'apt-get install kdeconnect -y' | \
+    'firewall-cmd --add-service=kdeconnect --permanent' | \
+    'firewall-cmd --reload')
+        exit 0
+        ;;
+    *)
+        echo "Nieoczekiwane sudo: $*" >&2
+        exit 1
+        ;;
+esac
 MOCK
 # Podgląd nie może wymagać ani używać jq.
 printf '#!/usr/bin/env bash\nexit 99\n' > "$work/bin/jq"
@@ -50,8 +67,12 @@ if ((EUID != 0)); then
     cat > "$work/expected" <<'EXPECTED'
 setup-repositories.sh --apply
 sudo apt-get update
+sudo btmgmt ssp on
 sudo apt-get install -y -- ca-certificates curl jq snapd dconf-cli python3 python3-venv
-install.sh 
+sudo apt-get install kdeconnect -y
+sudo firewall-cmd --add-service=kdeconnect --permanent
+sudo firewall-cmd --reload
+install.sh
 setup-repositories.sh --apply
 install-adguard.sh --apply
 setup-ulauncher.sh --apply
@@ -62,14 +83,16 @@ restore-bash.sh --apply
 restore-system-settings.sh --apply
 setup-python.sh --apply
 EXPECTED
-    cmp "$work/expected" "$OS_SCRIPTS_SETUP_LOG" || fail 'Kolejność lub argumenty etapów'
+    diff -u "$work/expected" "$OS_SCRIPTS_SETUP_LOG" || fail 'Kolejność lub argumenty etapów'
     # Każda awaria zatrzymuje dalsze etapy i wskazuje właściwe wznowienie.
     while read -r stage child; do
         : > "$OS_SCRIPTS_SETUP_LOG"
         status=0
         OS_SCRIPTS_SETUP_FAIL="$child" run_setup --apply > "$work/error" 2>&1 || status=$?
         [[ $status == 23 ]] || fail "Nie zachowano kodu błędu: $child"
-        [[ $(tail -1 "$OS_SCRIPTS_SETUP_LOG") == "$child "* ]] || fail "Kontynuowano po błędzie: $child"
+        last_call=$(tail -n 1 "$OS_SCRIPTS_SETUP_LOG")
+        [[ $last_call == "$child" || $last_call == "$child "* ]] \
+            || fail "Kontynuowano po błędzie: $child"
         grep -Fq -- "--apply --from $stage" "$work/error" || fail "Brak wznowienia: $stage"
     done <<'STAGES'
 apps install.sh

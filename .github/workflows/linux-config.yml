@@ -1,0 +1,45 @@
+name: Linux - GNOME and configuration
+on:
+  push:
+    branches: [linux]
+  pull_request:
+    branches: [linux]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Check JSON syntax (not JSONC)
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            jq -e . "$file" >/dev/null
+          done < <(find config -type f -name '*.json' -print0)
+      - name: Check bash configuration syntax
+        run: |
+          for file in config/bash/.bashrc.user config/bash/.bash_aliases config/bash/.bash_functions; do
+            if [ -f "$file" ]; then bash -n "$file"; fi
+          done
+      - name: Read-only preview of configuration scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          for script in \
+            scripts/restore-bash.sh \
+            scripts/restore-desktop.sh \
+            scripts/restore-settings.sh \
+            scripts/restore-system-settings.sh \
+            scripts/setup-polish.sh \
+            scripts/setup-python.sh \
+            scripts/setup-ulauncher.sh \
+            scripts/setup-repositories.sh \
+            scripts/install-adguard.sh; do
+            [[ -f "$script" ]] || { echo "Missing: $script" >&2; exit 1; }
+            bash "$script" --dry-run > "$RUNNER_TEMP/$(basename "$script").log"
+          done

@@ -1,0 +1,40 @@
+name: Linux - Offline integration tests
+on:
+  push:
+    branches: [linux]
+  pull_request:
+    branches: [linux]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install test dependencies
+        run: sudo apt-get update && sudo apt-get install -y jq ripgrep
+      - name: Run existing offline tests (mocks for curl, sudo and APT)
+        run: bash tests/check.sh
+      - name: Confirm top-level preview is read-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash setup.sh > "$RUNNER_TEMP/setup-preview.log"
+          test -s "$RUNNER_TEMP/setup-preview.log"
+      - name: Installer dry run - all sources/categories
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash install.sh --dry-run > "$RUNNER_TEMP/install-preview.log"
+          test -s "$RUNNER_TEMP/install-preview.log"
+      - name: Installer dry run - filtered sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          for source in apt snap deb; do
+            for category in essentials dev entertainment; do
+              bash install.sh --dry-run --source "$source" "$category" >/dev/null
+            done
+          done

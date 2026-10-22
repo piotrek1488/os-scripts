@@ -59,8 +59,12 @@ for ((i=start; i<${#stages[@]}; i++)); do
         apps)
             run bash "$ROOT/scripts/setup-repositories.sh" --apply
             run sudo apt-get update
+            run sudo btmgmt ssp on
             # Narzędzia potrzebne przed wywołaniem instalatorów aplikacji i ustawień.
             run sudo apt-get install -y -- ca-certificates curl jq snapd dconf-cli python3 python3-venv
+            run sudo apt-get install kdeconnect -y
+            run sudo firewall-cmd --add-service=kdeconnect --permanent
+            run sudo firewall-cmd --reload
             run bash "$ROOT/install.sh"
             # Pakiety producentów mogą dodać własne źródła; usuń ich duplikaty z naszego pliku.
             run bash "$ROOT/scripts/setup-repositories.sh" --apply

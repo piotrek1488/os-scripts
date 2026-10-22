@@ -1,0 +1,34 @@
+name: Linux - Package manifests
+on:
+  push:
+    branches: [linux]
+    paths:
+      - 'packages/**'
+      - 'install.sh'
+      - 'ci/validate_linux_packages.py'
+      - '.github/workflows/linux-packages.yml'
+  pull_request:
+    branches: [linux]
+    paths:
+      - 'packages/**'
+      - 'install.sh'
+      - 'ci/validate_linux_packages.py'
+      - '.github/workflows/linux-packages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Validate APT, Snap, DEB manifests offline
+        run: python ci/validate_linux_packages.py
+      - name: Validate installer accepts package lists
+        run: |
+          bash install.sh --dry-run --source apt >/dev/null
+          bash install.sh --dry-run --source snap >/dev/null
+          bash install.sh --dry-run --source deb >/dev/null

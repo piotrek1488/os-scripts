@@ -1,0 +1,32 @@
+name: Linux - Shell quality
+on:
+  push:
+    branches: [linux]
+  pull_request:
+    branches: [linux]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install linters
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Check bash syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' scripts < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
+          ((${#scripts[@]} > 0))
+          for script in "${scripts[@]}"; do bash -n "$script"; done
+          for script in config/bash/.bashrc.user config/bash/.bash_aliases config/bash/.bash_functions; do
+            if [[ -f "$script" ]]; then bash -n "$script"; fi
+          done
+      - name: ShellCheck (errors)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' scripts < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
+          shellcheck --severity=error "${scripts[@]}"

@@ -101,11 +101,16 @@ if selected system && command -v dconf >/dev/null; then
     fi
 fi
 # Schematowe wartości domyślne też mogą zawierać istniejące skróty.
-if selected system && command -v gsettings >/dev/null; then
-    merged_shortcuts=$(merge_shortcut_paths "$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings)" "$shortcut")
-else
-    merged_shortcuts="['$shortcut']"
+merged_shortcuts="['$shortcut']"
+if selected system && command -v gsettings >/dev/null 2>&1; then
+    if current_shortcuts=$(gsettings get \
+        org.gnome.settings-daemon.plugins.media-keys \
+        custom-keybindings 2>/dev/null); then
+        merged_shortcuts=$(merge_shortcut_paths \
+            "$current_shortcuts" "$shortcut")
+    fi
 fi
+
 
 # Zasoby muszą istnieć przed ustawieniem tapety, motywów i ikony ArcMenu.
 run bash "$ROOT/scripts/restore-settings.sh" --section assets "${mode:---dry-run}"
@@ -219,7 +224,11 @@ if selected extensions; then
     # Zapis list działa także dla rozszerzeń wykrywanych dopiero przy kolejnym logowaniu.
     for key in enabled-extensions disabled-extensions; do
         current="@as []"
-        if command -v gsettings >/dev/null; then current=$(gsettings get org.gnome.shell "$key"); fi
+        if command -v gsettings >/dev/null 2>&1; then
+            if current_value=$(gsettings get org.gnome.shell "$key" 2>/dev/null); then
+                current="$current_value"
+            fi
+        fi
         value=$(merge_extension_states "$current" "$available" "$key")
         write_dconf "/org/gnome/shell/$key" "$value"
     done
