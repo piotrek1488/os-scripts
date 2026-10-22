@@ -1,3 +1,10 @@
+[![Linux - Actionlint](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-actionlint.yml/badge.svg?branch=linux&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-actionlint.yml) 
+[![Linux - GNOME and configuration](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-config.yml/badge.svg?branch=linux&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-config.yml)
+[![Linux - Secrets](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-secrets.yml/badge.svg?branch=linux&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-secrets.yml)
+[![Linux - Package manifests](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-packages.yml/badge.svg?branch=linux&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-packages.yml)
+[![Linux - Shell quality](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-shell.yml/badge.svg?branch=linux&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-shell.yml)
+[![Linux - Offline integration tests](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-tests.yml/badge.svg?branch=linux&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/linux-tests.yml)
+
 # os-scripts
 
 Listy aplikacji i instalator Bash po reinstalacji **Ubuntu 26.04 (resolute), amd64**.
