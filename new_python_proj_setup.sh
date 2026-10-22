@@ -68,10 +68,19 @@ This project is a Python application built with a modular layout.
 Replace this with your project description and instructions.
 EOL
 
+# Create a src/ directory for your project modules
+echo ""
+echo "Creating src/ directory..."
+mkdir -p src
+cat <<EOL > src/__init__.py
+# This file makes src a Python package.
+from . import main_module
+EOL
+
 # Create the main entry point
 echo ""
-echo "Creating main.py..."
-cat <<EOL > main.py
+echo "Creating src/main_module.py..."
+cat <<EOL > src/main_module.py
 #!/usr/bin/env python3
 
 from src import main_module
@@ -84,34 +93,26 @@ if __name__ == '__main__':
     main()
 EOL
 
-# Make main.py executable
-chmod +x main.py
-
-# Create a src/ directory for your project modules
-echo ""
-echo "Creating src/ directory..."
-mkdir src
-cat <<EOL > src/__init__.py
-# This file makes src a Python package.
-from . import main_module
-EOL
-
 # Create a sample main_module in src/
 echo ""
-echo "Creating src/main.py..."
-cat <<EOL > src/main.py
+echo "Creating main.py..."
+cat <<EOL > main.py
 def run():
     print("This is the main module. Replace this with your core functionality.")
 EOL
 
+# Make main.py executable
+chmod +x main.py
+
 # Create additional placeholder modules if desired
 for file in config.py module1.py module2.py; do
     echo ""
-    echo "Creating src/\$file..."
-    cat <<EOL > src/\$file
-# \$file: Add your implementation details here.
+    echo "Creating src/$file..."
+    cat > "src/$file" <<EOL
+# $file: Add your implementation details here.
 EOL
 done
+
 
 # Create logs directory for log files
 echo ""

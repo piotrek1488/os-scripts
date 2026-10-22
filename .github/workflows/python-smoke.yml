@@ -23,17 +23,45 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+
           workspace="$(mktemp -d)"
           trap 'rm -rf "$workspace"' EXIT
+
           cd "$workspace"
           bash "$GITHUB_WORKSPACE/new_python_proj_setup.sh" ci_demo
           cd ci_demo
-          test -f src/main_module.py
-          test -f src/__init__.py
-          test -f main.py
-          test -f tests/test_basic.py
+
+          echo "=== Generated project structure ==="
+          find . -maxdepth 3 -type f | sort
+
+          echo "=== Checking required files ==="
+          for file in \
+            main.py \
+            src/__init__.py \
+            src/main_module.py \
+            src/config.py \
+            src/module1.py \
+            src/module2.py \
+            tests/test_basic.py; do
+
+            if [[ ! -f "$file" ]]; then
+              echo "::error::Missing required file: $file"
+              exit 1
+            fi
+          done
+
+          if [[ -e "src/\$file" ]]; then
+            echo "::error::Unexpected literal filename"
+            exit 1
+          fi
+
+          echo "=== Compile Python ==="
           python -m compileall -q .
-          python main.py | grep -F 'Welcome to ci_demo!'
+
+          echo "=== Run application ==="
+          python main.py
+
+          echo "=== Run tests ==="
           python -m pip install pytest
           python -m pytest -q
       - name: Verify missing argument fails cleanly

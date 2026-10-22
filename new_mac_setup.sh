@@ -83,7 +83,6 @@ packages=(
     # "epic-games"
     "alt-tab"
     # "cheatsheet"
-    "keyclu"
     "clipgrab"
     "jdownloader"
     "copyclip"
@@ -127,7 +126,6 @@ mas_packages=(
     "1568262835"  # Super Agent for Safari
     "497799835"   # Xcode
     "571213070"   # DaVinci Resolve
-    "545519333"   # Prime Video
     "1294126402"  # HEIC Converter
     "1221250572"  # Xnip
     "1160374471"  # Pipifier
@@ -202,8 +200,7 @@ function error_logging {
     if [ ! -f "$file_name" ]; then
         echo -e "\nFile does not exist. Creating it...\n"
         touch "$file_name" # Create the file
-        echo "This is the log of errors that occurred during " \ 
-        "the script execution." > "$file_name"
+        echo "This is the log of errors that occurred during the script execution." > "$file_name"
     else
         echo -e "\nFile exists. Will append to it.\n"
     fi

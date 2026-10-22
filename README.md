@@ -1,3 +1,10 @@
+[![macOS compatibility](https://github.com/piotrek1488/os-scripts/actions/workflows/macos-ci.yml/badge.svg?branch=macos&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/macos-ci.yml)
+[![Secrets and Actions lint](https://github.com/piotrek1488/os-scripts/actions/workflows/security.yml/badge.svg?branch=macos&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/security.yml)
+[![Shell CI](https://github.com/piotrek1488/os-scripts/actions/workflows/shell-ci.yml/badge.svg?branch=macos&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/shell-ci.yml)
+[![Zsh config validation](https://github.com/piotrek1488/os-scripts/actions/workflows/zsh-ci.yml/badge.svg?branch=macos&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/zsh-ci.yml)
+[![Homebrew catalog validation](https://github.com/piotrek1488/os-scripts/actions/workflows/homebrew-validator.yml/badge.svg?branch=macos&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/homebrew-validator.yml)
+[![Python generator smoke test](https://github.com/piotrek1488/os-scripts/actions/workflows/python-smoke.yml/badge.svg?branch=macos&event=push)](https://github.com/piotrek1488/os-scripts/actions/workflows/python-smoke.yml)
+
 # os-scripts — macOS
 
 Zestaw skryptów do przygotowania środowiska pracy na **macOS**: instalacji aplikacji i narzędzi, konfiguracji powłoki Zsh oraz tworzenia szkieletu projektu Python.
