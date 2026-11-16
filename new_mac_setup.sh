@@ -45,7 +45,7 @@ packages=(
     "docker-desktop"
     "colima"
     "pyenv"
-    "zsh-completion"
+    "zsh-completions"
     "docker-compose"
     "pyenv-virtualenv"
     "thefuck"
@@ -53,7 +53,7 @@ packages=(
     "ssh-copy-id"
     "zsh-syntax-highlighting"
     "speedtest-cli"
-    "spellcheck"
+    "aspell"
     "rename"
     "curl"
     "trash"
@@ -68,13 +68,13 @@ packages=(
     "neohtop"
     "rocket"
     "macwhisper"
-    "font-monaspace-nerd-font"
+    "font-monaspice-nerd-font"
     # "quicklook-json" # disabled
     "keyclu"
     "surfshark"
-    "chrome-browser"
+    "google-chrome"
     "transnomino"
-    "sketchybar"
+    "FelixKratz/formulae/sketchybar"
     "raycast"
     "stremioservice"
     "stremio"
@@ -101,7 +101,7 @@ packages=(
     "caffeine"
     "appcleaner"
     "TheBoredTeam/boring-notch/boring-notch"
-    "cmdx"
+    "YONN2222/cmdx/cmdx"
     "micro"
     "onecast"
     "iina"
@@ -208,6 +208,14 @@ function error_logging {
     # Append content to the file
     echo "$formatted_date" >> "$file_name"
     echo -e "\nFailed to install cask: $package_name\n"
+}
+
+# Register the third-party sources before querying their packages.
+function install_taps {
+    brew tap FelixKratz/formulae || return 1
+    brew tap TheBoredTeam/boring-notch || return 1
+    # cmdX hosts its tap in the app repository, not in homebrew-cmdx.
+    brew tap YONN2222/cmdx https://github.com/YONN2222/cmdX || return 1
 }
 
 # Function to install all packages from the packages array
@@ -333,6 +341,10 @@ else
 fi
 
 # Install all specified packages
+if ! install_taps; then
+    echo "Failed to configure third-party Homebrew taps."
+    exit 1
+fi
 echo -e "\nInstalling BREW packages...\n"
 install_packages
 echo -e "\nInstalling MAS packages...\n"

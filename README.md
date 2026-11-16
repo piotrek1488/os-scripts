@@ -104,6 +104,18 @@ shellcheck new_mac_setup.sh new_python_proj_setup.sh
 
 Wyniki testów znajdziesz w zakładce [Actions](https://github.com/piotrek1488/os-scripts/actions). Workflowy specyficzne dla macOS powinny być przypisane do gałęzi `macos`.
 
+Walidator pakietów można uruchomić bez instalowania aplikacji:
+
+```bash
+python3 -m unittest discover -s ci -p 'test_*.py' -v
+python3 ci/validate_packages.py --offline new_mac_setup.sh
+python3 ci/validate_packages.py --online new_mac_setup.sh
+```
+
+Tryb `--offline` sprawdza strukturę list, duplikaty, identyfikatory App Store i adresy DMG. Tryb `--online` dodatkowo pobiera [katalogi Homebrew](https://formulae.brew.sh/docs/api/) i rozpoznaje bieżące nazwy, aliasy oraz dawne nazwy pakietów. Nie sprawdza zgodności aplikacji z konkretną wersją macOS ani dostępności plików DMG i aplikacji App Store.
+
+Pakiety spoza katalogu Homebrew muszą mieć pełną nazwę `autor/tap/pakiet`; walidator oznacza je jako `SKIP (third-party tap)`. Instalator rejestruje tapy [SketchyBar](https://felixkratz.github.io/SketchyBar/setup), [BoringNotch](https://github.com/TheBoredTeam/homebrew-boring-notch) oraz [cmdX](https://github.com/YONN2222/cmdX#3-installation). cmdX wymaga jawnego adresu repozytorium przy `brew tap`. Narzędzie do sprawdzania pisowni na liście to `aspell`.
+
 ## Bezpieczeństwo i rozwiązywanie problemów
 
 - **Homebrew / `mas` nie działa:** sprawdź instalację, `PATH`, logowanie do App Store i dostępność pakietu.

@@ -2,10 +2,10 @@ name: Homebrew catalog validation
 on:
   push:
     branches: [macos]
-    paths: ['new_mac_setup.sh', 'ci/validate_packages.py', '.github/workflows/homebrew-validator.yml']
+    paths: ['new_mac_setup.sh', 'ci/**', '.github/workflows/homebrew-validator.yml']
   pull_request:
     branches: [macos]
-    paths: ['new_mac_setup.sh', 'ci/validate_packages.py', '.github/workflows/homebrew-validator.yml']
+    paths: ['new_mac_setup.sh', 'ci/**', '.github/workflows/homebrew-validator.yml']
   schedule:
     - cron: '17 7 * * 1'
   workflow_dispatch:
@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Test package validator
+        run: python -m unittest discover -s ci -p 'test_*.py' -v
       - run: python ci/validate_packages.py --offline new_mac_setup.sh
   online:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'

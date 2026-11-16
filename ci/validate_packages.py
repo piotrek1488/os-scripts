@@ -2,10 +2,9 @@
 """Validate the literal package arrays in new_mac_setup.sh without executing it."""
 import argparse
 import concurrent.futures
+import json
 import re
 import sys
-import urllib.error
-import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -28,22 +27,53 @@ def extract(text, name):
     return entries
 
 
-def check_remote(item):
+def fetch_catalog(kind):
+    # Per-package endpoints do not resolve aliases such as "python".
+    url = f'https://formulae.brew.sh/api/{kind}.json'
+    request = urllib.request.Request(url, headers={'User-Agent': 'os-scripts-ci'})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        entries = json.load(response)
+    if not isinstance(entries, list) or not entries:
+        raise ValueError(f'Invalid {kind} catalog: expected a non-empty list')
+    name_key = 'name' if kind == 'formula' else 'token'
+    alternate_keys = ('aliases', 'oldnames') if kind == 'formula' else ('old_tokens',)
+    catalog = {}
+    for entry in entries:
+        canonical = entry[name_key]
+        if not isinstance(canonical, str) or not canonical:
+            raise ValueError(f'Invalid {kind} package name')
+        catalog[canonical] = (kind, canonical)
+    # Current names take precedence over historical names.
+    for entry in entries:
+        for key in alternate_keys:
+            for name in entry.get(key, []):
+                catalog.setdefault(name, (kind, entry[name_key]))
+    return catalog
+
+
+def load_catalogs():
+    catalog = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+        catalogs = list(pool.map(fetch_catalog, ('formula', 'cask')))
+    # A formula alias must not shadow a current cask token (e.g. onedrive).
+    for entries in catalogs:
+        for name, package in entries.items():
+            if name == package[1]:
+                catalog.setdefault(name, package)
+    for entries in catalogs:
+        for name, package in entries.items():
+            catalog.setdefault(name, package)
+    return catalog
+
+
+def check_remote(item, catalog):
     # Explicit Homebrew tap formulae cannot be queried with the public default catalog.
     if item.count('/') == 2:
         return item, 'SKIP (third-party tap)'
-    token = urllib.parse.quote(item, safe='@+-')
-    for kind in ('formula', 'cask'):
-        url = f'https://formulae.brew.sh/api/{kind}/{token}.json'
-        try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'os-scripts-ci'}), timeout=12) as response:
-                if response.status == 200:
-                    return item, f'OK ({kind})'
-        except urllib.error.HTTPError as exc:
-            if exc.code != 404:
-                return item, f'NETWORK ERROR: HTTP {exc.code}'
-        except (urllib.error.URLError, TimeoutError) as exc:
-            return item, f'NETWORK ERROR: {exc}'
+    if item in catalog:
+        kind, canonical = catalog[item]
+        resolved = f': {canonical}' if item != canonical else ''
+        return item, f'OK ({kind}{resolved})'
     return item, 'UNKNOWN (neither formula nor cask)'
 
 
@@ -75,10 +105,15 @@ def main():
         if not name or not separator or not url.startswith('https://'):
             errors.append(f'Invalid DMG entry: {value}')
     if args.online:
-        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-            for item, result in pool.map(check_remote, arrays['packages']):
+        try:
+            catalog = load_catalogs()
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            errors.append(f'Unable to load Homebrew catalogs: {exc}')
+        else:
+            for item in arrays['packages']:
+                item, result = check_remote(item, catalog)
                 print(f'{item}: {result}')
-                if result.startswith(('UNKNOWN', 'NETWORK ERROR')):
+                if result.startswith('UNKNOWN'):
                     errors.append(f'{item}: {result}')
     for error in errors:
         print(f'ERROR: {error}', file=sys.stderr)
